@@ -1,59 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy – realxreal.ai</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-dark: #0F172A;
+      --text-light: #F9FAFB;
+      --text-muted: #94A3B8;
+      --primary: #60A5FA;
+    }
     body {
+      background: var(--bg-dark);
+      color: var(--text-light);
       font-family: 'Inter', sans-serif;
-      background: #0F172A;
-      color: #F9FAFB;
-      padding: 4rem 2rem;
-      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #1E293B;
+      background-color: rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 0;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .logo span {
+      color: var(--primary);
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: var(--text-light);
+    }
+    .container {
       max-width: 800px;
       margin: 0 auto;
+      padding: 3rem 1.5rem;
     }
     h1 {
       font-size: 2.5rem;
-      font-weight: 600;
       margin-bottom: 1.5rem;
     }
     h2 {
       font-size: 1.5rem;
       margin-top: 2rem;
     }
+    p {
+      line-height: 1.8;
+      margin-top: 1rem;
+    }
     a {
-      color: #60A5FA;
+      color: var(--primary);
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p>At <strong>realxreal.ai</strong>, your privacy is a fundamental right — not a feature. This document outlines what data we collect, how we use it, and what we absolutely don’t do.</p>
+  <header class="navbar">
+    <div class="logo">realxreal<span>.ai</span></div>
+    <div class="nav-links">
+      <a href="/">← Back to Home</a>
+    </div>
+  </header>
 
-  <h2>1. We Do Not Collect Personal Data by Default</h2>
-  <p>We do not use cookies, analytics tools, trackers, or fingerprinting scripts. When you visit our website, we do not log your IP address, browser, or behavior. We respect your right to browse privately.</p>
+  <main class="container">
+    <h1>Privacy Policy</h1>
+    <p>At <strong>realxreal.ai</strong>, your privacy is a fundamental right — not a feature. This document outlines what data we collect, how we use it, and what we absolutely don’t do.</p>
 
-  <h2>2. Early Access Signups</h2>
-  <p>If you choose to sign up for early access, we collect only your email address. That’s it. We will use it solely to notify you when the product is ready or to ask for feedback, if you consent.</p>
+    <h2>1. We Do Not Collect Personal Data by Default</h2>
+    <p>We do not use cookies, analytics tools, trackers, or fingerprinting scripts. When you visit our website, we do not log your IP address, browser, or behavior. We respect your right to browse privately.</p>
 
-  <h2>3. No Third-Party Sharing</h2>
-  <p>We do not sell, rent, share, or transfer your information to any third party. Your data stays with us, encrypted and secured.</p>
+    <h2>2. Early Access Signups</h2>
+    <p>If you choose to sign up for early access, we collect only your email address. That’s it. We will use it solely to notify you when the product is ready or to ask for feedback, if you consent.</p>
 
-  <h2>4. No Behavioral Analytics</h2>
-  <p>We do not use Google Analytics, Facebook Pixel, or any behavioral tracking service. We measure success based on trust, not traffic data.</p>
+    <h2>3. No Third-Party Sharing</h2>
+    <p>We do not sell, rent, share, or transfer your information to any third party. Your data stays with us, encrypted and secured.</p>
 
-  <h2>5. Email Retention and Deletion</h2>
-  <p>You can request to delete your email address at any time by contacting <a href="mailto:founder@realxreal.ai">founder@realxreal.ai</a>. We'll honor your request within 72 hours.</p>
+    <h2>4. No Behavioral Analytics</h2>
+    <p>We do not use Google Analytics, Facebook Pixel, or any behavioral tracking service. We measure success based on trust, not traffic data.</p>
 
-  <h2>6. Changes to This Policy</h2>
-  <p>If we ever change our data practices, we’ll update this page and notify all early access users by email — with opt-out options, always.</p>
+    <h2>5. Email Retention and Deletion</h2>
+    <p>You can request to delete your email address at any time by contacting <a href="mailto:founder@realxreal.ai">founder@realxreal.ai</a>. We'll honor your request within 72 hours.</p>
 
-  <h2>7. Contact</h2>
-  <p>If you have questions or concerns, email us at <a href="mailto:founder@realxreal.ai">founder@realxreal.ai</a>.</p>
+    <h2>6. Changes to This Policy</h2>
+    <p>If we ever change our data practices, we’ll update this page and notify all early access users by email — with opt-out options, always.</p>
 
-  <p style="margin-top: 3rem; color: #9CA3AF;">Last updated: July 25, 2025</p>
+    <h2>7. Contact</h2>
+    <p>If you have questions or concerns, email us at <a href="mailto:founder@realxreal.ai">founder@realxreal.ai</a>.</p>
+
+    <p style="margin-top: 3rem; color: var(--text-muted);">Last updated: July 25, 2025</p>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 realxreal.ai — No surveillance. No compromises.
+  </footer>
 </body>
 </html>
