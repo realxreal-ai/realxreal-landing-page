@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>realxreal.ai - Authentic Digital Communication</title>
+    <title>realxreal.ai - Real Recognizes Real AI</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -574,6 +574,105 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
+        /* Footer Styles */
+        footer {
+            background: var(--surface-alt);
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(67, 112, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .footer-logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--surface);
+            border: 1px solid rgba(67, 112, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--surface);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(67, 112, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-menu {
@@ -604,6 +703,19 @@
 
             .section {
                 padding: 4rem 0;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
             }
         }
 
@@ -639,7 +751,8 @@
 
         /* Logo image styles - for when you add your actual logo */
         .nav-logo-img img,
-        .hero-logo img {
+        .hero-logo img,
+        .footer-logo-img img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
@@ -688,7 +801,7 @@
                     <!-- Replace this div with <img src="your-logo.png" alt="realxreal.ai logo"> -->
                     <img src="images/realxreal-dark-logo.png" alt="realxreal.ai logo">
                 </div>
-                <div class="hero-badge">Powered by The Doppelganger Protocol</div>
+                <div class="hero-badge">Powered by The Doppelgänger Protocol</div>
                 <h1 class="hero-title">real×real</h1>
                 <p class="hero-subtitle">
                     The first mobile app using shared human memory as the root of trust in digital communication.
@@ -734,7 +847,7 @@
         <section id="solution" class="section animate-on-scroll">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">The Doppelganger Protocol</h2>
+                    <h2 class="section-title">The Doppelgänger Protocol</h2>
                     <p class="section-subtitle">
                         A revolutionary standard for verifying identity using shared human memory as the root of trust
                     </p>
@@ -743,18 +856,18 @@
                 <div class="features-container">
                     <div style="text-align: center; max-width: 900px; margin: 0 auto;">
                         <p style="font-size: 1.3rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text);">
-                            <strong>The Doppelganger Protocol</strong> is a new standard for verifying identity in a world of deepfakes, scams, and digital impersonation. Instead of relying on weak passwords, static codewords, or easily stolen biometrics, it uses <strong>shared human memory</strong> as the root of trust.
+                            <strong>The Doppelgänger Protocol</strong> is a new standard for verifying identity in a world of deepfakes, scams, and digital impersonation. Instead of relying on weak passwords, static codewords, or easily stolen biometrics, it uses <strong>shared human memory</strong> as the root of trust.
                         </p>
                         <p style="font-size: 1.2rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text-secondary);">
                             By embedding the meaning behind real experiences — not just exact words — the protocol lets two people authenticate each other in natural language, whether spoken or typed, while making it nearly impossible for an AI or adversary to fake convincingly.
                         </p>
                         <p style="font-size: 1.2rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
-                            Unlike traditional systems that depend on secrets stored in the cloud, Doppelganger is <strong>device-bound, private, and human-first</strong>. Trust is established through challenge-response exchanges based on memories, emotions, or personal details only the right person would know.
+                            Unlike traditional systems that depend on secrets stored in the cloud, Doppelgänger is <strong>device-bound, private, and human-first</strong>. Trust is established through challenge-response exchanges based on memories, emotions, or personal details only the right person would know.
                         </p>
                         
                         <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary);">realxreal.ai: First Implementation</h3>
                         <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary);">
-                            Our mobile application is the first implementation of The Doppelganger Protocol, combining shared memory verification with flexible embeddings, optional biometrics like typing rhythm and voice cadence, and cryptographic security to create a layered defense that scales from families to enterprises.
+                            Our mobile application is the first implementation of The Doppelgänger Protocol, combining shared memory verification with flexible embeddings, optional biometrics like typing rhythm and voice cadence, and cryptographic security to create a layered defense that scales from families to enterprises.
                         </p>
                     </div>
                     
@@ -779,7 +892,7 @@
                 <div class="section-header">
                     <h2 class="section-title">App Features</h2>
                     <p class="section-subtitle">
-                        How realxreal.ai implements The Doppelganger Protocol in practice
+                        How realxreal.ai implements The Doppelgänger Protocol in practice
                     </p>
                 </div>
 
@@ -787,7 +900,7 @@
                     <div class="feature-card">
                         <div class="feature-icon">🔐</div>
                         <h4>Trusted Contacts</h4>
-                        <p>Add verified contacts using The Doppelganger Protocol for memory-based authenticated relationships.</p>
+                        <p>Add verified contacts using The Doppelgänger Protocol for memory-based authenticated relationships.</p>
                     </div>
                     
                     <div class="feature-card">
@@ -828,7 +941,7 @@
             <div class="container">
                 <div class="metrics-header">
                     <h2 class="section-title">Verification Layers</h2>
-                    <p class="section-subtitle">How The Doppelganger Protocol quantifies authenticity</p>
+                    <p class="section-subtitle">How The Doppelgänger Protocol quantifies authenticity</p>
                 </div>
 
                 <div class="metrics-grid">
@@ -883,7 +996,7 @@
                     </div>
                     <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">Built in the Open</h3>
                     <p style="font-size: 1.2rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text-secondary); max-width: 700px; margin-left: auto; margin-right: auto;">
-                        realxreal.ai and The Doppelganger Protocol are intentionally open source. We believe that the future of digital trust requires transparency, community scrutiny, and collaborative development.
+                        realxreal.ai and The Doppelgänger Protocol are intentionally open source. We believe that the future of digital trust requires transparency, community scrutiny, and collaborative development.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2.5rem; color: var(--text-secondary); max-width: 700px; margin-left: auto; margin-right: auto;">
                         Our code, protocols, and research are available for review, contribution, and implementation by developers, researchers, and organizations worldwide.
@@ -903,7 +1016,7 @@
             <div class="container">
                 <div class="cta-section animate-on-scroll">
                     <div class="cta-content">
-                        <h2>Experience The Doppelganger Protocol</h2>
+                        <h2>Experience The Doppelgänger Protocol</h2>
                         <p>
                             Be among the first to use shared human memory for digital authentication. 
                             Join the revolution in trusted communication with realxreal.ai.
@@ -913,6 +1026,45 @@
                 </div>
             </div>
         </section>
+
+        <!-- Footer Section -->
+        <footer class="animate-on-scroll">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="footer-logo-img">
+                            <img src="images/realxreal-dark-logo.png" alt="realxreal.ai logo">
+                        </div>
+                        <span class="footer-logo-text">realxreal.ai</span>
+                    </div>
+                    <p>
+                        Pioneering trusted digital communication through The Doppelgänger Protocol.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://github.com/realxreal-ai" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <a href="mailto:info@realxreal.ai">info@realxreal.ai</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Links</h4>
+                    <a href="#problem">Problem</a>
+                    <a href="#solution">Solution</a>
+                    <a href="#features">Features</a>
+                    <a href="#metrics">Metrics</a>
+                    <a href="https://github.com/realxreal-ai">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 realxreal.ai All rights reserved.
+            </div>
+        </footer>
     </main>
 
     <script>
@@ -942,17 +1094,24 @@
                 themeToggle.textContent = '◑';
             }
         });
-
-        // Smooth scrolling for navigation
+        // smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
                     });
+                } else {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
