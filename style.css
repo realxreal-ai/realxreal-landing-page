@@ -1,0 +1,305 @@
+/* --- Global Styles & Variables --- */
+:root {
+    /* Dark Mode Colors */
+    --background-color-dark: #0F0435; /* Your provided 0F0435 */
+    --text-color-dark: #B0C3FF;    /* Your provided B0C3FF */
+    --primary-color-dark: #404AFF; /* Your provided 404AFF */
+    --secondary-bg-dark: #1E124B;  /* A slightly lighter dark for cards/elements */
+    --border-color-dark: #2B1D6A;  /* A border color for dark mode */
+    --subtitle-color-dark: #90A0E0; /* A softer text color */
+
+    /* Light Mode Colors (defined but not used by default) */
+    --background-color-light: #F0F8FF; /* Example light background */
+    --text-color-light: #080F36;   /* Your provided 080F36 */
+    --primary-color-light: #4370FF; /* Your provided 4370FF */
+    --secondary-bg-light: #E0EBF5; /* A slightly darker light for cards/elements */
+    --border-color-light: #B8D0E0; /* A border color for light mode */
+    --subtitle-color-light: #506080; /* A softer text color */
+
+
+    /* Currently active theme variables (default to dark) */
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-color-dark);
+    --secondary-bg: var(--secondary-bg-dark);
+    --border-color: var(--border-color-dark);
+    --subtitle-color: var(--subtitle-color-dark);
+    
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* To switch to light mode, you could add a class to body like this:
+body.light-mode {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-color-light);
+    --secondary-bg: var(--secondary-bg-light);
+    --border-color: var(--border-color-light);
+    --subtitle-color: var(--subtitle-color-light);
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color); /* Updated for theme */
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color); /* Updated for theme */
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--subtitle-color); /* Adjusted for better contrast */
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Header --- */
+header {
+    padding: 20px 0;
+    position: relative; /* For positioning corner logo */
+    z-index: 10; /* Ensure logo is above other content if needed */
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start; /* Logo on left corner */
+    align-items: center;
+}
+
+.logo-corner {
+    /* Style for the logo in the corner */
+    display: flex; /* To center image/text within it */
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-corner img, .logo-corner .logo-text {
+    /* Adjust size and styling for corner logo */
+    height: 40px; /* Example height for an image logo */
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative; /* For positioning center logo */
+}
+
+.logo-center {
+    /* Style for the logo in the center of the hero */
+    margin-bottom: 3rem; /* Space below the logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-center img, .logo-center .logo-text-large {
+    /* Adjust size and styling for center logo */
+    height: 100px; /* Example height for an image logo */
+    font-weight: 700;
+    font-size: 3rem; /* Larger text size if using text logo */
+    color: var(--text-color);
+}
+
+#hero .subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 1.5rem auto 2.5rem;
+    color: var(--subtitle-color); /* Updated for theme */
+}
+
+/* --- Signup Form --- */
+#signup-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--secondary-bg); /* Updated for theme */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.form-title {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color); /* Updated for theme */
+}
+
+#waitlist-form {
+    display: flex;
+    gap: 10px;
+}
+
+#email-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color); /* Match overall background for input */
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+
+#email-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 30%, transparent); /* Dynamic shadow */
+}
+
+#waitlist-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: #fff; /* Keep button text white for contrast */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#waitlist-form button:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 80%, black); /* Slightly darker primary on hover */
+}
+
+#success-message {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    color: #5cb85c; /* A neutral success green */
+    font-weight: 600;
+}
+
+/* --- Features Section --- */
+#solution p {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background-color: var(--secondary-bg); /* Updated for theme */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.feature-card h3 {
+    color: var(--text-color); /* Updated for theme */
+}
+
+/* --- Vision & Values Sections --- */
+#vision, #values {
+    text-align: center;
+}
+
+.values-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--subtitle-color); /* Updated for theme */
+}
+
+.values-list span {
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--subtitle-color); /* Updated for theme */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #waitlist-form {
+        flex-direction: column;
+    }
+    
+    #waitlist-form button {
+        width: 100%;
+    }
+
+    .values-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .values-list span {
+        display: block;
+    }
+    
+    .values-list span::after {
+        content: ""; /* Remove bullet point from individual items on small screens */
+    }
+    
+    .values-list b { 
+        display: none;
+    }
+}
