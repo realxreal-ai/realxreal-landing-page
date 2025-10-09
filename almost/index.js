@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 4. Typing Animation ---
-    const textToType = "Real Recognizes Real";
+    const textToType = "realxreal";
     let charIndex = 0;
     
     function type() {

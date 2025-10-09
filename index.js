@@ -102,3 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Add subtle typing effect to hero title
+function typeWriter() {
+    const text = 'real×real';
+    const heroTitle = document.querySelector('.hero-title');
+    let i = 0;
+    
+    heroTitle.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            heroTitle.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 150);
+        }
+    }
+    
+    setTimeout(type, 1000);
+}
+
+// Initialize typing effect
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(typeWriter, 500);
+});

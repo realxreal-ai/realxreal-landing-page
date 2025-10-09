@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>realxreal.ai – Real Recognizes Real</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            --bg-light: #ffffff;
+            --bg-dark: #0F0435;
+            --bg-accent: #404AFF;
+            --text-light: #080F36;
+            --text-dark: #B0C3FF;
+            --primary: #4370FF;
+            --secondary: #94eFFF;
+            
+            --transition-speed: 0.8s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar { display: none; }
+        html { -ms-overflow-style: none; scrollbar-width: none; }
+
+        body {
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            scroll-behavior: smooth;
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        body[data-section-theme="dark"] {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        body[data-section-theme="light"] {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        body[data-section-theme="accent"] {
+            background-color: var(--bg-accent);
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 0;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+        }
+
+        body[data-section-theme="light"] nav {
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(8, 15, 54, 0.1);
+        }
+
+        body[data-section-theme="dark"] nav,
+        body[data-section-theme="accent"] nav {
+            background: rgba(15, 4, 53, 0.8);
+            border-bottom: 1px solid rgba(176, 195, 255, 0.1);
+        }
+        /*
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .nav-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4370FF, #94eFFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+
+        .nav-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: color 0.4s ease;
+        }
+        */
+        .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4370FF, #94eFFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+
+.hero-logo {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    /* background: var(--primary); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    box-shadow: 0 10px 40px rgba(67, 112, 255, 0.3);
+    /* Placeholder styling - will be replaced with actual logo */
+}
+
+
+/* Logo image styles - for when you add your actual logo */
+.nav-logo-img img,
+.hero-logo img,
+.footer-logo-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+.nav-logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: color 0.4s ease;
+}
+
+        body[data-section-theme="light"] .nav-logo-text { color: var(--text-light); }
+        body[data-section-theme="dark"] .nav-logo-text,
+        body[data-section-theme="accent"] .nav-logo-text { color: var(--text-dark); }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .nav-menu a:hover { opacity: 1; }
+
+        body[data-section-theme="light"] .nav-menu a { color: var(--text-light); }
+        body[data-section-theme="dark"] .nav-menu a,
+        body[data-section-theme="accent"] .nav-menu a { color: var(--text-dark); }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Hero */
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        /* Cards Grid */
+        /* Carousel Container */
+        .carousel-container {
+            overflow: hidden;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 40s linear infinite;
+            width: fit-content;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            flex: 0 0 380px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        body[data-section-theme="light"] .story-card {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        body[data-section-theme="dark"] .story-card,
+        body[data-section-theme="accent"] .story-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(67, 112, 255, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            background: rgba(67, 112, 255, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        body[data-section-theme="dark"] .card-tag,
+        body[data-section-theme="accent"] .card-tag {
+            color: var(--secondary);
+            background: rgba(176, 195, 255, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .card-stat {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        body[data-section-theme="dark"] .card-stat,
+        body[data-section-theme="accent"] .card-stat {
+            color: var(--secondary);
+        }
+
+        /* Video Section - MODIFIED */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 100%;
+        }
+
+        .video-item {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-item video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .embed-grid {
+            margin-top: 0;
+        }
+
+        .embed-responsive {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .embed-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Solution Section */
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .solution-content p {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            text-align: left;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 112, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(67, 112, 255, 0.4);
+        }
+
+        body[data-section-theme="dark"] .cta-button,
+        body[data-section-theme="accent"] .cta-button {
+            background: white;
+            color: var(--bg-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        body[data-section-theme="dark"] footer {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.7;
+            margin-bottom: 0.6rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover { opacity: 1; }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid;
+            border-radius: 8px;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+            background: rgba(67, 112, 255, 0.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        body[data-section-theme="dark"] .footer-bottom {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: inherit;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: block; }
+
+            .section { padding: 6rem 1.5rem 3rem; }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .story-card {
+                flex: 0 0 320px;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-section-theme="dark">
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="nav-logo-img">R</div>
+                <!-- <img src="../images/realxreal-dark-logo.png" alt="realxreal.ai logo"> -->
+                <span class="nav-logo-text">realxreal.ai</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#waitlist">Waitlist</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="section" data-theme="dark">
+            <div class="hero-content fade-in">
+                <h1>Real people.<br>Real conversations.</h1>
+                <p class="hero-subtitle">The world has an identity problem. We built the solution.</p>
+            </div>
+        </section>
+
+        <section id="stories" class="section" data-theme="light">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>This is happening now.</h2>
+                    <p class="section-subtitle">Real deepfake attacks. Real victims. Real consequences.</p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <a href="https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800" alt="Person on phone call" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">CEO Fraud</span>
+                                <h3 class="card-title">$25M Stolen Using AI Video Clone</h3>
+                                <p class="card-description">Hong Kong bank employee transferred millions after criminals used deepfake video call to impersonate the company's CFO.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-warns-ai-voice-cloning-scams" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Concerned parent" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Family Scam</span>
+                                <h3 class="card-title">"Mom, I Need Money"</h3>
+                                <p class="card-description">A mother wired $15,000 after receiving a panicked call from what sounded exactly like her daughter. It was an AI voice clone.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.mcafee.com/blogs/internet-security/ai-voice-cloning-scams/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800" alt="Business meeting" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Statistics</span>
+                                <div class="card-stat">77%</div>
+                                <p class="card-description">of people who received an AI voice clone scam lost money. The average loss: $10,000 per victim. — McAfee 2024</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.nbcnews.com/tech/security/ai-generated-biden-robocall-tells-new-hampshire-democrats-not-vote-rcna134984" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800" alt="Election deepfake" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Political</span>
+                                <h3 class="card-title">Deepfake Biden Robocalls</h3>
+                                <p class="card-description">AI-generated robocalls impersonating President Biden discouraged voters in New Hampshire. Democracy itself is now a target.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.wsj.com/articles/fraudsters-used-ai-to-mimic-ceos-voice-in-unusual-cybercrime-case-11567157402" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800" alt="Corporate executive" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Enterprise</span>
+                                <h3 class="card-title">$243K Wire Fraud</h3>
+                                <p class="card-description">UK energy company lost hundreds of thousands after CEO's voice was cloned. The attackers studied his speech patterns for weeks.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.washingtonpost.com/technology/2023/03/05/ai-voice-scam/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800" alt="Worried person" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Reality</span>
+                                <div class="card-stat">45%</div>
+                                <p class="card-description">of people say they'd respond to a fake call from a loved one asking for money. Trust is broken.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800" alt="Person on phone call" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">CEO Fraud</span>
+                                <h3 class="card-title">$25M Stolen Using AI Video Clone</h3>
+                                <p class="card-description">Hong Kong bank employee transferred millions after criminals used deepfake video call to impersonate the company's CFO.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-warns-ai-voice-cloning-scams" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Concerned parent" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Family Scam</span>
+                                <h3 class="card-title">"Mom, I Need Money"</h3>
+                                <p class="card-description">A mother wired $15,000 after receiving a panicked call from what sounded exactly like her daughter. It was an AI voice clone.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.mcafee.com/blogs/internet-security/ai-voice-cloning-scams/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800" alt="Business meeting" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Statistics</span>
+                                <div class="card-stat">77%</div>
+                                <p class="card-description">of people who received an AI voice clone scam lost money. The average loss: $10,000 per victim. — McAfee 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-container" style="margin-top: 2rem;">
+                    <div class="carousel-track" style="animation-direction: reverse;">
+                        <a href="https://www.bbc.com/news/technology-68025346" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800" alt="Elderly person on phone" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Elder Fraud</span>
+                                <h3 class="card-title">Grandparent Scam 2.0</h3>
+                                <p class="card-description">Seniors are prime targets. AI voice clones of grandchildren in distress have stolen over $50M from elderly victims in 2023 alone.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.forbes.com/sites/bernardmarr/2024/01/29/the-biggest-deepfake-scams-of-2023/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800" alt="Business presentation" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Corporate</span>
+                                <h3 class="card-title">Ferrari Blocks $1M Scam</h3>
+                                <p class="card-description">Ferrari executive suspected deepfake when "CEO" called. Asked a personal question only the real CEO would know. Attack thwarted.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.theguardian.com/technology/2023/apr/26/mother-ai-cloning-scam-student" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="Woman in distress" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Kidnapping Hoax</span>
+                                <h3 class="card-title">"We Have Your Daughter"</h3>
+                                <p class="card-description">Arizona mother heard her 15-year-old daughter crying on the phone. Kidnappers demanded $50K. The daughter was safe at camp.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.reuters.com/technology/cybersecurity/deepfake-video-calls-are-rising-threat-companies-2024-02-08/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="Team meeting" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Enterprise Risk</span>
+                                <h3 class="card-title">Video Calls No Longer Safe</h3>
+                                <p class="card-description">58% of companies report attempted deepfake video call fraud. Traditional verification methods are obsolete.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.nytimes.com/2023/05/22/technology/ai-scam-calls.html" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=800" alt="Person concerned" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Warning</span>
+                                <h3 class="card-title">3 Seconds Is All It Takes</h3>
+                                <p class="card-description">AI needs just 3 seconds of audio to clone your voice. Every voicemail, video, or social media post is training data.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.bleepingcomputer.com/news/security/deepfake-phishing-attacks-surge-by-3000-percent/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800" alt="Data breach" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Trend Alert</span>
+                                <div class="card-stat">3000%</div>
+                                <p class="card-description">increase in deepfake phishing attacks in 2023. The threat is accelerating exponentially.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.bbc.com/news/technology-68025346" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800" alt="Elderly person on phone" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Elder Fraud</span>
+                                <h3 class="card-title">Grandparent Scam 2.0</h3>
+                                <p class="card-description">Seniors are prime targets. AI voice clones of grandchildren in distress have stolen over $50M from elderly victims in 2023 alone.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.forbes.com/sites/bernardmarr/2024/01/29/the-biggest-deepfake-scams-of-2023/" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800" alt="Business presentation" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Corporate</span>
+                                <h3 class="card-title">Ferrari Blocks $1M Scam</h3>
+                                <p class="card-description">Ferrari executive suspected deepfake when "CEO" called. Asked a personal question only the real CEO would know. Attack thwarted.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.theguardian.com/technology/2023/apr/26/mother-ai-cloning-scam-student" target="_blank" class="story-card">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="Woman in distress" class="card-image">
+                            <div class="card-content">
+                                <span class="card-tag">Kidnapping Hoax</span>
+                                <h3 class="card-title">"We Have Your Daughter"</h3>
+                                <p class="card-description">Arizona mother heard her 15-year-old daughter crying on the phone. Kidnappers demanded $50K. The daughter was safe at camp.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-theme="dark">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Who's really on the other end?</h2>
+                    <p class="section-subtitle">Every call. Every message. Every video chat. How do you know it's real?</p>
+                </div>
+                
+                <div class="video-grid">
+                    <div class="video-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="https://videos.pexels.com/video-files/7255745/7255745-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="https://videos.pexels.com/video-files/946147/946147-hd_1920_1080_30fps.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="section-header fade-in" style="margin-top: 6rem;">
+                    <h2>And when it's not.</h2>
+                    <p class="section-subtitle">This is how easily trust can be broken. Seeing is no longer believing.</p>
+               </div>
+
+                <!-- <div class="video-grid embed-grid">
+                    <div class="embed-responsive">
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/yjRZmWs8Ji8?si=XakIaG36s5uE5Ebc&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="embed-responsive">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3wVpVH0Wa6E?si=a1kE-ghkrIFASFDX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div> -->
+                <div class="video-grid embed-grid">
+                    <div class="embed-responsive">
+                        <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/yjRZmWs8Ji8?autoplay=1&mute=1&loop=1&controls=0&playlist=yjRZmWs8Ji8"
+                        title="Deepfake Example 1"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="embed-responsive">
+                        <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/3wVpVH0Wa6E?autoplay=1&mute=1&loop=1&controls=0&playlist=3wVpVH0Wa6E"
+                        title="Deepfake Example 2"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="solution" class="section" data-theme="accent">
+            <div class="container">
+                <div class="solution-content fade-in">
+                    <h2>Enter realxreal.ai</h2>
+                    <p>A mobile app that authenticates who's really calling, emailing, or meeting you — before you ever respond.</p>
+                    <p>We use cryptography, biometrics, and a new protocol called Doppelganger that turns your shared memories into an unbreakable security key.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔐</div>
+                            <h4>Memory-Based Auth</h4>
+                            <p>Verify using shared experiences only real people know</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <h4>Device-Bound</h4>
+                            <p>No cloud. No servers. Just you and your device</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Pre-Call Verification</h4>
+                            <p>Authenticate before the conversation starts</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <h4>Zero-Knowledge</h4>
+                            <p>Your data never leaves your control</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-theme="light">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Built for real people</h2>
+                    <p class="section-subtitle">Corporate-grade security. Consumer-simple experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="waitlist" class="section" data-theme="dark">
+            <div class="hero-content fade-in">
+                <h2>Be the first to verify what's real.</h2>
+                <p class="hero-subtitle">Join the waitlist for early access to realxreal.ai</p>
+                <a href="#" class="cta-button" id="ctaButton">Join Waitlist →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="nav-logo-img" style="width: 32px; height: 32px;">R</div>
+                    <span class="nav-logo-text">realxreal.ai</span>
+                </div>
+                <p>The first implementation of The Doppelganger Protocol. Open source, privacy-first, human-centric.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Links</h4>
+                <a href="#stories">Stories</a>
+                <a href="#solution">Solution</a>
+                <a href="https://github.com/realxreal-ai" target="_blank">GitHub</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="mailto:hello@realxreal.ai" class="social-link" aria-label="Email">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg>
+                    </a>
+                    <a href="https://x.com/realxrealai" target="_blank" class="social-link" aria-label="Twitter">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                    <a href="https://github.com/realxreal-ai" target="_blank" class="social-link" aria-label="GitHub">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© <span id="year">2025</span> realxreal.ai. Open source under MIT license.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            // Section theme observer
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const theme = entry.target.getAttribute('data-theme');
+                        body.setAttribute('data-section-theme', theme);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.section').forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Fade in animations
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                fadeObserver.observe(el);
+            });
+
+            // Mobile menu
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileToggle.textContent = '☰';
+                });
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // CTA button
+            document.getElementById('ctaButton').addEventListener('click', function(e) {
+                e.preventDefault();
+                // Replace with your actual waitlist link
+                window.open('https://your-crm-signup-link.com', '_blank');
+            });
+
+            // Copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Logo scroll to top
+            document.querySelector('.nav-logo').addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#hero') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
