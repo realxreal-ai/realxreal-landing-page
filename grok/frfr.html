@@ -301,10 +301,17 @@
             text-align: center;
             position: relative;
         }
+        
+        #story.content-section {
+            display: block;
+            min-height: auto;
+            padding: 8rem 2rem;
+        }
 
         .container {
             max-width: 1200px;
             width: 100%;
+            margin: 0 auto; /* <-- CSS FIX APPLIED HERE */
         }
 
         /* --- Typography --- */
@@ -710,7 +717,6 @@
         <div class="nav-container">
             <a href="#hero" class="nav-logo">
                 <div class="nav-logo-img">
-                    <!-- Replace with <img src="your-logo.png" alt="realxreal.ai"> -->
                     R
                 </div>
                 <span class="nav-logo-text">realxreal.ai</span>
@@ -727,7 +733,6 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="content-section" data-theme="dark">
             <div class="container">
                 <div class="hero-badge animate-on-load">The Doppelganger Protocol</div>
@@ -739,19 +744,18 @@
             </div>
         </section>
 
-        <!-- Manifesto / Narrative Section -->
         <section id="story" class="content-section" data-theme="light">
-        <div class="container animate-on-scroll">
+        <div class="container">
             <div class="manifesto">
 
-            <div class="manifesto-block" data-theme="dark">
+            <div class="manifesto-block animate-on-scroll" data-theme="dark">
                 <h2>01 — The world runs on lies.</h2>
                 <p>The internet was built on trust. Not real trust — just the illusion of it.</p>
                 <p>Email assumes you are who you say you are. Phone numbers assume you belong to the device. Video calls assume the voice is real.</p>
                 <p>None of it was designed to be secure. We just never stopped to ask: <strong>Who’s actually on the other side?</strong></p>
             </div>
 
-            <div class="manifesto-block" data-theme="light">
+            <div class="manifesto-block animate-on-scroll" data-theme="light">
                 <h2>02 — Deepfakes didn’t break the system.</h2>
                 <p>They exposed it.</p>
                 <p>The protocols holding up our digital world — TCP/IP, SMTP, DNS, SS7 — were built decades ago. No encryption. No identity. No verification.</p>
@@ -759,55 +763,55 @@
                 <p>Now, AI doesn’t need to hack you. <strong>It just needs to sound like you.</strong></p>
             </div>
 
-            <div class="manifesto-block" data-theme="dark">
+            <div class="manifesto-block animate-on-scroll" data-theme="dark">
                 <h2>03 — People are the new attack surface.</h2>
                 <p>Scammers don’t exploit firewalls anymore. They exploit emotion, trust, and panic.</p>
                 <p>45% of people say they’d respond to a fake call or message from a loved one asking for money.</p>
                 <p>Technology made us reachable. AI made us impersonable. And no one built a defense for human trust.</p>
             </div>
 
-            <div class="manifesto-block" data-theme="light">
+            <div class="manifesto-block animate-on-scroll" data-theme="light">
                 <h2>04 — Enter realxreal.ai</h2>
                 <p>A mobile app that lets you authenticate who’s really calling, emailing, or meeting you — before you ever respond.</p>
                 <p>We combine cryptography, biometrics, and a new class of human-centered verification called the <strong>Doppelganger Protocol</strong>.</p>
                 <p><strong>No cloud uploads. No third-party servers. No “trust us.”</strong><br>Just you, your device, and the truth.</p>
             </div>
 
-            <div class="manifesto-block" data-theme="dark">
+            <div class="manifesto-block animate-on-scroll" data-theme="dark">
                 <h2>05 — Designed for humans, not hackers.</h2>
                 <p>Other companies use AI to fight AI — a never-ending, expensive arms race.</p>
                 <p>We use the one thing AI can’t replicate: <strong>the human element</strong>.</p>
                 <p>Your memory, your voice, your device. Securely bound together — and only yours.</p>
             </div>
 
-            <div class="manifesto-block" data-theme="light">
+            <div class="manifesto-block animate-on-scroll" data-theme="light">
                 <h2>06 — Privacy isn’t a feature. It’s the foundation.</h2>
                 <p>realxreal runs entirely on-device. Your biometric data and embeddings never leave your phone.</p>
                 <p>We believe privacy should be the baseline, not the upsell.</p>
             </div>
 
-            <div class="manifesto-block" data-theme="dark">
+            <div class="manifesto-block animate-on-scroll" data-theme="dark">
                 <h2>07 — Trust, visualized.</h2>
                 <p>Every verified interaction strengthens your network. Every anomaly stands out like static in the signal.</p>
                 <p>See your relationships — personal and professional — mapped as a living trust graph.</p>
                 <p><strong>Because the people you trust most should never need to prove it twice.</strong></p>
             </div>
 
-            <div class="manifesto-block" data-theme="light">
+            <div class="manifesto-block animate-on-scroll" data-theme="light">
                 <h2>08 — From scams to sovereignty.</h2>
                 <p>realxreal gives individuals and SMBs the same defense capabilities once reserved for governments and enterprises.</p>
                 <p>Proactive verification. Mutual authentication. True control over your digital presence.</p>
                 <p>Not another antivirus. A new class of trust infrastructure.</p>
             </div>
 
-            <div class="manifesto-block" data-theme="dark">
+            <div class="manifesto-block animate-on-scroll" data-theme="dark">
                 <h2>09 — Why now?</h2>
                 <p>Deepfakes are up 1,740% in North America alone. Remote work is permanent. Digital identity theft is scaling faster than cybersecurity spending.</p>
                 <p>The old web was built for openness. The new one must be built for authenticity.</p>
                 <p>Because trust can’t be outsourced anymore — it has to be rebuilt.</p>
             </div>
 
-            <div class="manifesto-block" data-theme="accent">
+            <div class="manifesto-block animate-on-scroll" data-theme="accent">
                 <h2>10 — There’s one more thing.</h2>
                 <p>Every person you trust shares something no machine can fake — memory.</p>
                 <p>realxreal encodes that human connection into a living security key — your shared history becomes your ultimate authentication.</p>
@@ -820,21 +824,18 @@
         </section>
 
 
-        <!-- Problem Section -->
         <section id="problem" class="content-section" data-theme="light">
             <div class="container animate-on-scroll">
                 <h2>Deepfakes and digital impersonation have broken trust online.</h2>
             </div>
         </section>
 
-        <!-- Solution Section -->
         <section id="solution" class="content-section" data-theme="accent">
             <div class="container animate-on-scroll">
                 <h2>We empower people to authenticate their digital contacts using shared human memory.</h2>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="content-section" data-theme="dark">
             <div class="container animate-on-scroll">
                 <h2 style="font-size: clamp(2rem, 6vw, 4rem); margin-bottom: 1rem;">Verify identity. Build trust.</h2>
@@ -863,7 +864,6 @@
             </div>
         </section>
 
-        <!-- Open Source Section -->
         <section id="open-source" class="content-section" data-theme="dark">
             <div class="container animate-on-scroll">
                 <div class="github-section">
@@ -886,7 +886,6 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section id="contact" class="content-section" data-theme="light">
             <div class="container animate-on-scroll">
                 <h2>Be the first to secure your digital identity.</h2>
@@ -895,7 +894,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
