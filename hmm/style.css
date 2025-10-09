@@ -1,0 +1,165 @@
+/* --- Global Styles & Variables --- */
+:root {
+    /* Dark Mode Colors */
+    --dark-bg: #0F0435;
+    --dark-text: #B0C3FF;
+    --dark-primary: #404AFF;
+
+    /* Light Mode Colors */
+    --light-bg: #FFFFFF;
+    --light-text: #080F36;
+    --light-primary: #4370FF;
+    
+    --font-family: 'Inter', -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    overscroll-behavior: none; /* Prevents bounce effect on scroll */
+    
+    /* The core of the scroll effect: smooth transitions for color changes */
+    transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* --- Section Styling --- */
+.content-section {
+    min-height: 100vh; /* Make each section take up the full screen height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    text-align: center;
+}
+
+/* --- Typography --- */
+h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem); /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(2rem, 6vw, 4rem); /* Responsive font size */
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* --- Features List Styling --- */
+.features-list {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.features-list p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.features-list span {
+    font-weight: 600;
+    text-align: right;
+    opacity: 0.8;
+}
+
+
+/* --- Signup Form --- */
+#signup-form-container {
+    margin-top: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#waitlist-form {
+    display: flex;
+    gap: 10px;
+}
+
+#email-input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid var(--light-text);
+    background-color: transparent;
+    color: var(--light-text);
+    font-size: 1.1rem;
+    font-family: var(--font-family);
+}
+
+#email-input::placeholder {
+    color: var(--light-text);
+    opacity: 0.6;
+}
+
+#waitlist-form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--light-text);
+    color: var(--light-bg);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#waitlist-form button:hover {
+    transform: scale(1.05);
+}
+
+#success-message {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .features-list p {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .features-list span {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    #waitlist-form {
+        flex-direction: column;
+    }
+}
