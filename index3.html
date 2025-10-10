@@ -13,6 +13,7 @@
     <style>
        
 /* --- Global Styles & Variables --- */
+
 :root {
     --font-heading: 'Inter', sans-serif;
     --font-body: 'JetBrains Mono', monospace;
@@ -367,6 +368,22 @@ body[data-section-theme="light"] .footer-bottom {
     border-top: 1px solid rgba(8, 15, 54, 0.1);
 }
 
+.protocol-description {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.2rem, 3vw, 1.6rem); /* Responsive font size */
+  line-height: 1.7;
+  color: #B0C3FF; /* A soft, off-white for readability on dark backgrounds */
+  max-width: 800px;
+  text-align: center;
+  margin: 2rem auto;
+  text-shadow: 0 0 10px rgba(70, 110, 255, 0.1);
+}
+
+.protocol-description strong {
+  font-weight: 600;
+  color: #94EFFF; /* A solid, bright color for the protocol name */
+}
+
 /* --- Animations --- */
 .animate-on-load {
     opacity: 0; transform: translateY(30px);
@@ -381,29 +398,95 @@ body[data-section-theme="light"] .footer-bottom {
     to { opacity: 1; transform: translateY(0); }
 }
 
+
+
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: inherit; flex-direction: column;
-        padding: 2rem; gap: 1.5rem;
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0;
+
+        /* --- FIX STARTS HERE --- */
+        /* Use a specific translucent background to enable the blur */
+        background-color: rgba(15, 4, 53, 0.85);
+
+        /* Apply a blur effect to whatever is behind the menu */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+        /* --- FIX ENDS HERE --- */
+        
+        flex-direction: column;
+        padding: 2rem; 
+        gap: 1.5rem;
         border-bottom: 1px solid rgba(67, 112, 255, 0.1);
     }
-    .nav-menu.active { display: flex; }
-    .mobile-menu-toggle { display: block; }
-    .section { padding: 6rem 1.5rem 3rem; }
-    .hero-logo { width: 120px; height: 120px; font-size: 3rem; }
-    h1.hero-title { font-size: clamp(2.5rem, 12vw, 4rem); }
-    h2, h2.hero-subtitle { font-size: clamp(2rem, 10vw, 3.5rem); }
-    .footer-container { grid-template-columns: 1fr; gap: 2rem; }
-    .feature-list { grid-template-columns: 1fr; gap: 1.5rem; }
-    .story-card { flex: 0 0 320px; }
-    .video-grid { grid-template-columns: 1fr; }
+    .nav-menu.active { 
+        display: flex; 
+    }
+    .mobile-menu-toggle { 
+        display: block; 
+    }
+    .section { 
+        padding: 6rem 1.5rem 3rem; 
+    }
+    .hero-logo { 
+        width: 120px; 
+        height: 120px; 
+        font-size: 3rem; 
+    }
+    h1.hero-title { 
+        font-size: clamp(2.5rem, 12vw, 4rem); 
+    }
+    h2, h2.hero-subtitle { 
+        font-size: clamp(2rem, 10vw, 3.5rem); 
+    }
+    .footer-container { 
+        grid-template-columns: 1fr; 
+        gap: 2rem; 
+    }
+    .feature-list { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
+    .story-card { 
+        flex: 0 0 320px; 
+    }
+    .video-grid { 
+        grid-template-columns: 1fr; 
+    }
 }
-@media (max-width: 480px) {
-    nav { padding: 1rem 0; }
-    .nav-container { padding: 0 1rem; }
+
+.tagline {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: #e4e4e7;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
 }
+
+.tech {
+  color: #7c84ff;
+  font-weight: 500;
+}
+
+.protocol {
+  color: #b03cff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.memory {
+  background: linear-gradient(90deg, #943fff, #404aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(148, 63, 255, 0.25);
+}
+
 
     </style>
 </head>
@@ -424,7 +507,7 @@ body[data-section-theme="light"] .footer-bottom {
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#waitlist">Waitlist</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle">◐</button>
+            <!-- <button class="theme-toggle" id="themeToggle">◐</button> -->
             <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
         </div>
     </nav>
@@ -652,8 +735,14 @@ body[data-section-theme="light"] .footer-bottom {
             <div class="container">
                 <div class="solution-content fade-in">
                     <h2>Solution: the realxreal mobile app </h2>
-                    <p>Our mobile app authenticates who's really calling, emailing, or meeting you before you pick up the phone.</p>
-                    <p>We use cryptography, biometrics, and a new protocol called Doppelganger that turns your shared memories into an unbreakable security key.</p>
+                    <!-- <p >We use cryptography, biometrics, and a new protocol called The Doppelganger Protocol that turns your shared memories into an unbreakable security key.</p> -->
+                    <p class="tagline">
+                        We use <span class="tech">cryptography</span>, 
+                        <span class="tech">biometrics</span>, 
+                        and a new protocol called <span class="protocol">The Doppelganger Protocol</span> 
+                        that turns your <span class="memory">shared memories</span> with those you know 
+                        into an unbreakable security key.
+                    </p>
                     <!-- <div class="feature-list">
                         <div class="feature-item">
                             <div class="feature-icon">🔐</div>
@@ -677,29 +766,29 @@ body[data-section-theme="light"] .footer-bottom {
                         </div>
                     </div> -->
                     <div class="feature-list">
-    <div class="feature-item">
-        <div class="feature-icon">
-            <svg xmlns="http://www.w.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
-    <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
-</svg>
-        </div>
-        <h4>Memory-Based Auth</h4>
-        <p>Verify using shared experiences only real people know</p>
-    </div>
-    <div class="feature-item">
-        <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M7 4a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-16z" />
-    <path d="M11 5h2" />
-    <path d="M12 17v.01" />
-</svg>
-        </div>
-        <h4>Device-Bound</h4>
-        <p>No cloud. No servers. Just you and your device</p>
-    </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
+                                    <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+                                </svg>
+                            </div>
+                        <h4>Memory-Based Auth</h4>
+                        <p>Verify using shared experiences only real people know</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M7 4a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-16z" />
+                    <path d="M11 5h2" />
+                    <path d="M12 17v.01" />
+                </svg>
+                        </div>
+                        <h4>Device-Bound</h4>
+                        <p>No cloud. No servers. Just you and your device</p>
+                    </div>
     <div class="feature-item">
         <div class="feature-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -730,8 +819,8 @@ body[data-section-theme="light"] .footer-bottom {
 
         <section id="waitlist" class="section" data-theme="dark">
             <div class="hero-content fade-in">
-                <h2>Be the first to verify what's real.</h2>
-                <p class="hero-subtitle">Join the waitlist for early access to realxreal.ai</p>
+                <h2>Real Recognizes Real</h2>
+                <p class="hero-subtitle">Join the waitlist for early access to the realxreal mobile app.</p>
                 <a href="#" class="cta-button" id="ctaButton">Join Waitlist →</a>
             </div>
         </section>
@@ -746,6 +835,7 @@ body[data-section-theme="light"] .footer-bottom {
                     </div>
                     <span class="nav-logo-text">realxreal.ai</span>
                 </a>
+                
                 <p>The first implementation of The Doppelganger Protocol. Open source, privacy-first, human-centric.</p>
             </div>
             <div class="footer-links">
@@ -778,7 +868,7 @@ body[data-section-theme="light"] .footer-bottom {
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© <span id="year">2025</span> realxreal.ai. Open source under MIT license.</p>
+            <p>© <span id="year">2025</span> Real Recognizes Real AI. All Rights Reserved.</p>
         </div>
     </footer>
     <!-- <footer>
@@ -896,7 +986,31 @@ body[data-section-theme="light"] .footer-bottom {
             // Copyright year
             document.getElementById('year').textContent = new Date().getFullYear();
         });
-    </script>
 
+        // Add subtle typing effect to hero title
+        function typeWriter() {
+            const text = 'real×real';
+            const heroTitle = document.querySelector('.hero-title');
+            let i = 0;
+            
+            heroTitle.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    heroTitle.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 150);
+                }
+            }
+            
+            setTimeout(type, 1000);
+        }
+
+        // Initialize typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+    
 </body>
 </html>
