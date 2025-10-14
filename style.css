@@ -638,32 +638,194 @@ body[data-section-theme="light"] .footer-bottom {
   cursor: pointer;
 }
 
-
-.memory::before {
-  content: "5h@r3d m3m0r!3s";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: rgba(255, 255, 255, 0.25);
-  transition: opacity 0.4s ease;
+/* --- FAQ Section --- */
+#faq .container {
+    max-width: 900px;
 }
 
-.memory::after {
-  content: "shared memories";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.faq-container {
+    margin-top: 4rem;
+    border-top: 1px solid rgba(8, 15, 54, 0.1);
 }
 
-.memory:hover::before {
-  opacity: 0;
+.faq-item {
+    border-bottom: 1px solid rgba(8, 15, 54, 0.1);
 }
 
-.memory:hover::after {
-  opacity: 1;
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
+.faq-question:hover {
+    color: var(--primary);
+}
 
+.faq-toggle {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-answer p {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* Active state - controlled by JavaScript */
+.faq-item.active .faq-question {
+    color: var(--primary);
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px; /* Adjust if answers are very long */
+    padding-bottom: 2rem;
+}
+
+/* Ask a Question CTA */
+.faq-cta {
+    text-align: center;
+    margin-top: 6rem;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+}
+
+.faq-cta h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.faq-cta p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.8;
+}
+
+.faq-answer ul {
+    list-style-position: inside;
+    padding-left: 0.5rem;
+    margin: 1rem 0;
+    opacity: 0.8;
+}
+
+.faq-answer li {
+    margin-bottom: 0.75rem;
+}
+
+/* --- About Page Styles --- */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.two-column-grid .column h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.two-column-grid .column p,
+.two-column-grid .column li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+#impact ul {
+    list-style-position: inside;
+    padding-left: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+#impact li {
+    margin-bottom: 0.75rem;
+}
+
+.example-quote {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary);
+    background-color: rgba(67, 112, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.example-quote p {
+    font-style: italic;
+    opacity: 1;
+    font-size: 1rem !important;
+}
+
+/* Table Styles */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Makes table scrollable on small screens */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.attack-vector-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.attack-vector-table th,
+.attack-vector-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.attack-vector-table th {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--secondary-dark);
+}
+
+.attack-vector-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.attack-vector-table td:nth-child(3) {
+    color: #94efff; /* Highlight the solution column */
+    font-weight: 600;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .two-column-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

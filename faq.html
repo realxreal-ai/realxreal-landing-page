@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ – realxreal.ai</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-section-theme="dark">
+    <div class="bg-grid"></div>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-img">
+                    <img src="images/realxreal-dark-logo.png" alt="realxreal.ai logo">
+                </div>
+                <span class="nav-logo-text">realxreal.ai</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="#arms-race">The Arms Race</a></li>
+                <li><a href="index.html#solution">Solution</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="index.html#waitlist">Waitlist</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="faq" class="section" data-theme="light">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about the next layer of trust for the internet.</p>
+                </div>
+
+                <div class="faq-container fade-in">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why “shared memories”?</span>
+                            <svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Because memories are the one thing deepfakes can’t fake. The people closest to you share moments and experiences that no AI could ever reproduce. Realxreal turns those private signals into the strongest proof of authenticity that exists.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can’t families just use a shared codeword instead of an app?</span>
+                            <svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It sounds simple — but codewords fail for the same reason passwords do. Without cryptographic binding, they’re fragile:</p>
+                            <ul>
+                                <li><strong>Single point of failure:</strong> One word = one secret. If overheard, guessed, or phished, the attacker wins.</li>
+                                <li><strong>Scalability collapse:</strong> Every family member needs separate secrets, or one shared secret that compromises everyone.</li>
+                                <li><strong>Replayable:</strong> An attacker can record or fake your voice asking for the codeword.</li>
+                                <li><strong>Unstructured trust:</strong> Who proves first? Who verifies? Codewords only work one way.</li>
+                                <li><strong>No device binding:</strong> They can’t tie a word to a verified device or memory, so leaks are permanent.</li>
+                            </ul>
+                            <p>Real Recognizes Real fixes this by binding memory-based authentication to a device key. Even if someone learns your challenge, it’s useless without your device and its cryptographic proof.</p>
+                            <p>It’s the difference between hoping someone’s real — and knowing they are.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What’s wrong with existing security methods?</span>
+                            <svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most of the internet’s identity systems were built assuming everyone was honest. Caller ID, email, and video chat all rely on unverifiable data that can be easily spoofed. Realxreal replaces these legacy assumptions with direct, human-verified proof.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How does Realxreal stop deepfakes?</span>
+                            <svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Deepfakes imitate faces and voices, but they can’t replicate relationships. Realxreal verifies identity using cryptographic keys created from shared experiences. Even if someone fakes your voice, they can’t pass the memory-based challenge that only you and your trusted contacts know.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>How is this different from Duo, Authy, or other MFA apps?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>Traditional MFA protects accounts—Realxreal protects people. Instead of confirming “you logged into the right service,” it confirms “you’re talking to the right person.” It’s multi-factor authentication for human interactions.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Is this a phone or messaging app?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>It’s both—and neither. Realxreal runs alongside your existing calls and video chats. Before a conversation starts, it verifies that both parties are who they say they are. Think of it as a trust layer that sits on top of your communications.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>How will this integrate into how I already communicate?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>You can import your existing contacts. Realxreal links to them through a lightweight verification handshake. Once verified, that contact becomes “trusted,” and your phone can recognize them automatically, no matter what app they use to reach you.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Do I have to authenticate every time?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>You decide. You control how often to re-authenticate with each contact. For a company handling sensitive transactions, more frequent checks add protection. For family and friends, a single challenge might be all you need. You set the threshold of trust.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>What data do you store?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>Almost none. Realxreal doesn’t store messages, biometric data, or memory content. Identities and verification keys stay encrypted on your device. We only process anonymous routing tokens for notifications—never anything personally identifying.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Is it secure?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>Yes—and it’s verifiable. The app will be open source, meaning anyone can audit the code, verify the cryptography, and confirm that your identity data never leaves your control.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Who is this for?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>Realxreal is for anyone who needs to know who’s real on the other end. That includes individuals, families, journalists, and businesses—from people protecting loved ones from scams to teams securing sensitive communications.</p></div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question"><span>What inspired this?</span><svg class="faq-toggle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+                        <div class="faq-answer"><p>The internet’s core protocols—from email to caller ID—were built in an era that assumed honesty. Today, those assumptions no longer hold. Realxreal follows the lineage of technologies like Signal and Bitcoin—open, privacy-first systems that rebuild trust from the ground up.</p></div>
+                    </div>
+                </div>
+
+                <div class="faq-cta fade-in">
+                    <h3>Have a different question?</h3>
+                    <p>We're building this in the open. Your feedback and questions will help shape the future of digital trust.</p>
+                    <a href="YOUR_TYPEFORM_LINK_HERE" target="_blank" class="cta-button">Ask a Question →</a>
+                </div>
+            </div>
+        </section>
+        </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                 <a href="index.html" class="nav-logo">
+                    <div class="nav-logo-img"><img src="images/realxreal-dark-logo.png" alt="realxreal.ai logo"></div>
+                    <span class="nav-logo-text">realxreal.ai</span>
+                </a>
+                <p>Real Recognizes Real. Open source, privacy-first, human-centric.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links</h4>
+                <a href="index.html#stories">Stories</a>
+                <a href="index.html#solution">Solution</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                 <div class="social-links">
+                    <a href="mailto:info@realxreal.ai" class="social-link" aria-label="Email"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg></a>
+                    <a href="https://x.com/realxreal_ai" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                    <a href="https://github.com/realxreal-ai" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year">2025</span> Real Recognizes Real AI. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="index.js"></script>
+    
+</body>
+</html>
