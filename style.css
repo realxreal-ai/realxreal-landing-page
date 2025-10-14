@@ -184,40 +184,62 @@ h2.hero-subtitle {
 
 /* About Section - After Hero */
 
+/* --- About Section - After Hero --- */
+#about .container {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "preheading preheading"
+        "intro      details"
+        "button     button";
+    gap: 2rem 5rem;
+    align-items: center;
+    min-height: calc(100vh - 12rem); /* Adjusts for section padding to fit viewport */
+}
+
 .preheading {
+    grid-area: preheading;
     font-family: var(--font-mono);
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-style: italic;
-    /* color: var(--primary); */
-    margin-bottom: 3rem;
     text-align: center;
     opacity: 0.9;
     font-weight: 500;
 }
 
+.about-intro {
+    grid-area: intro;
+    text-align: left;
+}
+
 #about h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
-    /* color: var(--text-light); */
 }
 
 #about .section-subtitle {
-    text-align: center;
+    text-align: left;
     font-size: clamp(1.3rem, 3vw, 1.8rem);
-    /* color: var(--text-light); */
     opacity: 0.8;
-    margin-bottom: 3rem;
     font-weight: 500;
 }
 
+.about-details {
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
 #about p {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
     line-height: 1.8;
-    /* color: var(--text-light); */
     opacity: 0.85;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    text-align: center;
+    max-width: 100%;
+    margin: 0;
 }
 
 /* #about .memory {
@@ -239,8 +261,9 @@ h2.hero-subtitle {
 } */
 
 #about .cta-button {
+    grid-area: button;
+    justify-self: center;
     display: inline-block;
-    margin-top: 2rem;
     background: var(--primary);
     color: white;
     padding: 1.2rem 3rem;
@@ -257,29 +280,42 @@ h2.hero-subtitle {
     box-shadow: 0 8px 25px rgba(67, 112, 255, 0.4);
 }
 
-#about .container {
-    max-width: 900px;
-    text-align: center;
-}
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+    #about .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "preheading"
+            "intro"
+            "details"
+            "button";
+        gap: 2rem;
+        min-height: 0;
+        text-align: center;
+    }
+
+    #about h2,
+    #about .section-subtitle,
+    .about-details {
+        text-align: center;
+    }
+
     .preheading {
         font-size: 0.95rem;
-        margin-bottom: 2rem;
     }
 
     #about p {
         font-size: 1.05rem;
-        margin-bottom: 1.5rem;
     }
 
     #about .cta-button {
         padding: 1rem 2.5rem;
         font-size: 0.95rem;
+        margin-top: 1rem;
     }
 }
-
 /* --- Typography for Other Sections --- */
 .section-header { text-align: center; margin-bottom: 4rem; }
 h2 { /* Default h2 for other sections */
