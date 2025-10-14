@@ -239,6 +239,9 @@ h2.hero-subtitle {
     gap: 2rem;
     text-align: left;
 }
+.about-content-section .section-subtitle {
+    font-weight: normal;
+}
 
 #about p {
     font-size: clamp(1.1rem, 1.5vw, 1.25rem);
@@ -247,24 +250,6 @@ h2.hero-subtitle {
     max-width: 100%;
     margin: 0;
 }
-
-/* #about .memory {
-    color: var(--primary);
-    font-weight: 600;
-    position: relative;
-    padding: 0 0.2rem;
-}
-
-#about .memory::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    opacity: 0.5;
-} */
 
 #about .cta-button {
     grid-area: button;
@@ -441,6 +426,38 @@ body[data-section-theme="accent"] .card-stat { color: var(--secondary); }
     font-family: var(--font-heading);
 }
 .feature-item p { font-size: 0.95rem; opacity: 0.8; line-height: 1.5; }
+
+
+/* --- Reusable FAQ Button --- */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; /* Adds some space above the button */
+}
+
+.faq-link-button {
+    display: inline-flex;
+   
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 112, 255, 0.2);
+}
+
+.faq-link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(67, 112, 255, 0.3);
+    color: white;
+}
 
 /* --- CTA Section --- */
 .hero-content { text-align: center; max-width: 900px; margin: 0 auto; }
@@ -752,7 +769,7 @@ body[data-section-theme="light"] .footer-bottom {
 #about-header .section-subtitle {
     /* Makes the main mission statement pop */
     color: var(--secondary-dark);
-    font-weight: 600;
+    font-weight: normal;
 }
 
 .mission-details {
