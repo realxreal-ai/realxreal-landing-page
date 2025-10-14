@@ -182,6 +182,104 @@ h2.hero-subtitle {
     max-width: 1100px; margin: 0 auto 1.5rem;
 }
 
+/* About Section - After Hero */
+
+.preheading {
+    font-family: var(--font-mono);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-style: italic;
+    /* color: var(--primary); */
+    margin-bottom: 3rem;
+    text-align: center;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    /* color: var(--text-light); */
+}
+
+#about .section-subtitle {
+    text-align: center;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    /* color: var(--text-light); */
+    opacity: 0.8;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+#about p {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.8;
+    /* color: var(--text-light); */
+    opacity: 0.85;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+/* #about .memory {
+    color: var(--primary);
+    font-weight: 600;
+    position: relative;
+    padding: 0 0.2rem;
+}
+
+#about .memory::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0.5;
+} */
+
+#about .cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    background: var(--primary);
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 112, 255, 0.3);
+}
+
+#about .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(67, 112, 255, 0.4);
+}
+
+#about .container {
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .preheading {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    #about p {
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #about .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 0.95rem;
+    }
+}
+
 /* --- Typography for Other Sections --- */
 .section-header { text-align: center; margin-bottom: 4rem; }
 h2 { /* Default h2 for other sections */
