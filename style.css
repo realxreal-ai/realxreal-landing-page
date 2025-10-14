@@ -740,6 +740,82 @@ body[data-section-theme="light"] .footer-bottom {
 }
 
 /* --- About Page Styles --- */
+
+/* --- NEW About Page Styles --- */
+
+.about-content-section {
+    max-width: 900px;
+    text-align: center;
+}
+
+/* --- About Page Header Restyle --- */
+#about-header .section-subtitle {
+    /* Makes the main mission statement pop */
+    color: var(--secondary-dark);
+    font-weight: 600;
+}
+
+.mission-details {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.8;
+    max-width: 700px; /* Constrains line length for readability */
+    margin: 1.5rem auto 0; /* Adds space between the two text blocks */
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+.about-content-section h3.special-font {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 1.5rem;
+}
+
+.about-content-section p {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--text-light);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    opacity: 1;
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+.github-link svg {
+    width: 32px;
+    height: 32px;
+}
+
+#values .section-header h2 {
+    color: white; /* Ensure heading is visible on accent bg */
+}
+
+.values-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.value-tag {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: white;
+}
 .two-column-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -818,7 +894,8 @@ body[data-section-theme="light"] .footer-bottom {
 }
 
 .attack-vector-table td:nth-child(3) {
-    color: #94efff; /* Highlight the solution column */
+    
+    color: #404AFF;
     font-weight: 600;
 }
 
