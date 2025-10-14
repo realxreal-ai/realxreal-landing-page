@@ -199,15 +199,21 @@ h2.hero-subtitle {
     min-height: calc(100vh - 12rem); /* Adjusts for section padding to fit viewport */
 }
 
-.preheading {
+#about .preheading {
     grid-area: preheading;
     font-family: var(--font-mono);
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    font-style: italic;
+    /* --- CHANGE HERE: Increased the font size values --- */
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-style: normal;
     text-align: center;
-    opacity: 0.9;
-    font-weight: 500;
+    opacity: 1;
+    font-weight: 600;
+    position: relative; 
+    max-width: 80%;
+    justify-self: center;
 }
+
+
 
 .about-intro {
     grid-area: intro;
