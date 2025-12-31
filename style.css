@@ -51,6 +51,19 @@ body[data-section-theme="accent"] {
     color: var(--text-accent);
 }
 
+/* --- Problem Section --- */
+.problem-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.problem-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    line-height: 1.8;
+    margin: 1.5rem auto;
+    opacity: 0.9;
+}
+
 /* Animated background grid */
 .bg-grid {
     position: fixed;
@@ -180,6 +193,14 @@ h2.hero-subtitle {
     font-weight: 600; line-height: 1.2;
     color: var(--secondary-dark); /* Use correct variable */
     max-width: 1100px; margin: 0 auto 1.5rem;
+}
+
+.hero-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 700px;
+    margin: 0 auto 3rem;
 }
 
 /* About Section - After Hero */
