@@ -937,6 +937,32 @@ body[data-section-theme="light"] .footer-bottom {
     font-weight: 600;
 }
 
+/* --- YouForm specific styling --- */
+
+/* Wrapper to control spacing and alignment */
+div[data-youform-embed] {
+    margin-top: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Optional: Adds a subtle glow matching your hero logo */
+    box-shadow: 0 10px 40px rgba(67, 112, 255, 0.15); 
+    background: var(--bg-dark); /* Prevents white flash while loading */
+    transition: all 0.3s ease;
+}
+
+/* Hide the default CTA button since the form replaces it, 
+   OR keep it if the form opens in a modal. 
+   Assuming you want the form visible on page load: */
+#waitlist .cta-button {
+    display: none; 
+}
+
+/* If you want the form to have a border that matches your cards */
+div[data-youform-embed] iframe {
+    border: 1px solid rgba(176, 195, 255, 0.1) !important;
+    border-radius: 16px;
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .two-column-grid {
