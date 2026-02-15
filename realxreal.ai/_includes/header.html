@@ -1,0 +1,23 @@
+<nav>
+  <div class="nav-container">
+    <a href="{{ '/' | relative_url }}" class="nav-logo">
+      <div class="nav-logo-img">
+        <img src="{{ '/assets/images/logos/realxreal-dark-logo.png' | relative_url }}" alt="realxreal.ai logo">
+      </div>
+      <span class="nav-logo-text">realxreal.ai</span>
+    </a>
+    
+    <ul class="nav-menu" id="navMenu">
+      {% for link in site.nav_links %}
+        <li>
+          <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+      <li>
+        <a href="{{ site.product.app_url }}" class="nav-cta">Download App →</a>
+      </li>
+    </ul>
+    
+    <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+  </div>
+</nav>
