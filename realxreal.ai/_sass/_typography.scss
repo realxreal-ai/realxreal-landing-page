@@ -10,46 +10,19 @@
     margin-bottom: 4rem; 
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2 { 
     font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700; 
+    line-height: 1.1; 
     letter-spacing: -0.02em;
-}
-
-h1 {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.05em;
-}
-
-h2 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    margin-bottom: 1rem;
-}
-
-h3 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    margin-bottom: 1rem;
-}
-
-h4 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-p {
-    font-size: 1.05rem;
-    line-height: 1.7;
     margin-bottom: 1rem;
 }
 
 /* Hero Typography */
 h1.hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-size: clamp(4rem, 12vw, 8rem);
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -58,12 +31,12 @@ h1.hero-title {
 
 h2.hero-subtitle {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 600;
     line-height: 1.2;
     color: var(--secondary-dark);
-    max-width: 900px;
-    margin: 0 auto 1rem;
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
 }
 
 .hero-description {
@@ -93,11 +66,10 @@ h2.hero-subtitle {
 /* Section Subtitles */
 .section-subtitle {
     font-family: var(--font-body);
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     opacity: 0.8;
     max-width: 700px;
     margin: 0 auto;
-    line-height: 1.6;
 }
 
 /* Problem/Description Text */
@@ -108,50 +80,46 @@ h2.hero-subtitle {
     opacity: 0.9;
 }
 
-/* Links */
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-/* Lists */
-ul, ol {
-    margin: 1.5rem 0;
-    padding-left: 2rem;
-}
-
-li {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 0.75rem;
-    opacity: 0.85;
-}
-
-/* Strong/Bold */
-strong {
-    font-weight: 600;
-    opacity: 1;
-}
-
-/* Code (if needed for developer docs) */
-code {
+.protocol-description {
     font-family: 'JetBrains Mono', monospace;
-    background: rgba(67, 112, 255, 0.1);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.9em;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    line-height: 1.7;
+    color: #B0C3FF;
+    max-width: 800px;
+    text-align: center;
+    margin: 2rem auto;
+    text-shadow: 0 0 10px rgba(70, 110, 255, 0.1);
+    
+    strong {
+        font-weight: 600;
+        color: #94EFFF;
+    }
 }
 
-pre {
-    background: rgba(67, 112, 255, 0.05);
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    
-    code {
-        background: none;
-        padding: 0;
-    }
+.tagline {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #e4e4e7;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.arms-race-tagline {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #0F0435;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.tech {
+    color: #0F0435;
+    font-weight: 500;
+}
+
+.arms-race-tech {
+    color: #404AFF;
+    font-weight: 500;
 }

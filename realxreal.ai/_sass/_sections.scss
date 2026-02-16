@@ -15,13 +15,15 @@
     margin: 0 auto;
 }
 
-#hero .container {
-    max-width: 900px;
-}
-
 /* Hero Section */
-#hero.section {
-    text-align: center;
+#hero {
+    &.section {
+        text-align: center;
+    }
+    
+    .container {
+        max-width: 800px;
+    }
 }
 
 /* Problem Section */
@@ -31,10 +33,190 @@
     margin: 0 auto;
 }
 
+/* About Section */
+#about .container {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "preheading preheading"
+        "intro      details"
+        "button     button";
+    gap: 2rem 5rem;
+    align-items: center;
+    min-height: calc(100vh - 12rem);
+}
+
+#about .preheading {
+    grid-area: preheading;
+    font-family: var(--font-mono);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-style: normal;
+    text-align: center;
+    opacity: 1;
+    font-weight: 600;
+    position: relative;
+    max-width: 80%;
+    justify-self: center;
+}
+
+.about-intro {
+    grid-area: intro;
+    text-align: left;
+}
+
+#about h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+#about .section-subtitle {
+    text-align: left;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.about-details {
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
+.about-content-section .section-subtitle {
+    font-weight: normal;
+}
+
+#about p {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 100%;
+    margin: 0;
+}
+
+#about .cta-button {
+    grid-area: button;
+    justify-self: center;
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 112, 255, 0.3);
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(67, 112, 255, 0.4);
+    }
+}
+
+/* Solution Section */
+.solution-content p {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* About Page Specific */
+.about-content-section {
+    max-width: 900px;
+    text-align: center;
+}
+
+#about-header .section-subtitle {
+    color: var(--secondary-dark);
+    font-weight: normal;
+}
+
+.mission-details {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+.about-content-section h3.special-font {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 1.5rem;
+}
+
+.about-content-section p {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--text-light);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        opacity: 1;
+        color: var(--primary);
+        transform: scale(1.1);
+    }
+    
+    svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+#values .section-header h2 {
+    color: white;
+}
+
 /* Mobile Sections */
 @media (max-width: 768px) {
     .section {
         padding: 6rem 1.5rem 3rem;
-        min-height: auto;
+    }
+    
+    #about .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "preheading"
+            "intro"
+            "details"
+            "button";
+        gap: 2rem;
+        min-height: 0;
+        text-align: center;
+    }
+    
+    #about h2,
+    #about .section-subtitle,
+    .about-details {
+        text-align: center;
+    }
+    
+    .preheading {
+        font-size: 0.95rem;
+    }
+    
+    #about p {
+        font-size: 1.05rem;
+    }
+    
+    #about .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 0.95rem;
+        margin-top: 1rem;
     }
 }
