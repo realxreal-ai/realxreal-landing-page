@@ -1,0 +1,129 @@
+# Enterprise solutions / use cases
+# Used in: Homepage cards, individual solution pages
+
+- id: "executive-protection"
+  title: "Executive Protection"
+  icon: "shield-user"
+  tagline: "Verify C-suite communications before taking action"
+  short_description: "Stop CEO fraud and executive impersonation. Verify financial requests, M&A intelligence, and strategic decisions."
+  full_description: |
+    Prevent CEO fraud and executive impersonation attacks. Verify communications 
+    from C-suite before acting on financial requests, strategic decisions, or 
+    confidential information sharing.
+  
+  metrics:
+    - label: "Avg. loss prevented"
+      value: "$1.2M per incident"
+    - label: "Setup time"
+      value: "15 minutes"
+    - label: "Verification time"
+      value: "5 seconds"
+  
+  use_cases:
+    - "Wire transfer authorization"
+    - "M&A due diligence communications"
+    - "Strategic decision verification"
+    - "Confidential information requests"
+  
+  integrations:
+    - "Slack"
+    - "Microsoft Teams"
+    - "Email"
+  
+  target_audience: "CFO, CEO, Board Members"
+
+- id: "wire-transfer"
+  title: "Wire Transfer Verification"
+  icon: "dollar-sign"
+  tagline: "Multi-party cryptographic approval for high-value payments"
+  short_description: "Prevent BEC and vendor fraud. Require cryptographic verification from multiple parties before processing transfers."
+  full_description: |
+    Stop business email compromise (BEC) and vendor fraud. Implement multi-party 
+    cryptographic approval workflow for payments over defined thresholds. Each 
+    approver verifies via device-bound credentials.
+  
+  metrics:
+    - label: "Integrates with"
+      value: "SAP, NetSuite, Bill.com"
+    - label: "Compliance"
+      value: "SOC 2, SOX ready"
+    - label: "Avg. fraud blocked"
+      value: "$127K per attempt"
+  
+  use_cases:
+    - "Wire transfer approval workflow"
+    - "ACH payment verification"
+    - "Vendor bank account change validation"
+    - "Large invoice payment authorization"
+  
+  integrations:
+    - "SAP"
+    - "NetSuite"
+    - "Bill.com"
+    - "Email"
+  
+  target_audience: "CFO, AP Manager, Finance Team"
+
+- id: "help-desk"
+  title: "Help Desk Security"
+  icon: "headset"
+  tagline: "Stop account takeover at the source"
+  short_description: "Verify password resets, permission changes, and access requests in real-time with cryptographic proof."
+  full_description: |
+    Stop social engineering attacks targeting your IT help desk. Replace security 
+    questions and callback verification with cryptographic proof. Verify password 
+    resets, permission changes, and access requests instantly.
+  
+  metrics:
+    - label: "Integrates with"
+      value: "ServiceNow, Zendesk, Okta"
+    - label: "Replaces"
+      value: "Security questions, callbacks"
+    - label: "Attack prevention"
+      value: "100% of tested scenarios"
+  
+  use_cases:
+    - "Password reset verification"
+    - "Permission elevation requests"
+    - "Account unlock validation"
+    - "MFA device registration"
+  
+  integrations:
+    - "ServiceNow"
+    - "Zendesk"
+    - "Okta"
+    - "Azure AD"
+  
+  target_audience: "IT Director, CISO, Help Desk Manager"
+
+- id: "vendor-fraud"
+  title: "Vendor Fraud Prevention"
+  icon: "users"
+  tagline: "Verify vendor changes before processing"
+  short_description: "Stop invoice fraud and vendor impersonation. Cryptographically verify bank account changes and payment requests."
+  full_description: |
+    Prevent vendor impersonation and invoice fraud. Verify bank account changes, 
+    invoice updates, and vendor communications through cryptographic challenges 
+    before processing any changes.
+  
+  metrics:
+    - label: "Protects"
+      value: "AP, Procurement, Finance"
+    - label: "Avg. fraud attempt"
+      value: "$127K per incident"
+    - label: "False positive rate"
+      value: "<0.1%"
+  
+  use_cases:
+    - "Vendor bank account change verification"
+    - "Invoice payment request validation"
+    - "New vendor onboarding verification"
+    - "Contract modification approval"
+  
+  integrations:
+    - "NetSuite"
+    - "SAP"
+    - "Email"
+    - "Vendor portals"
+  
+  target_audience: "CFO, Procurement, AP Manager"

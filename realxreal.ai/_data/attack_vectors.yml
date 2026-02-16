@@ -1,0 +1,27 @@
+# Security comparison table
+# Used in: Homepage table section, security page
+
+- attack_type: "Replay Attack"
+  old_world: "Deepfakes reuse recorded voices"
+  with_realxreal: "Unpredictable: memory challenge is randomly selected"
+  severity: "critical"
+
+- attack_type: "OSINT Guessing"
+  old_world: "Answers mined from public data"
+  with_realxreal: "Impossible: relies on private shared knowledge"
+  severity: "high"
+
+- attack_type: "Device Compromise"
+  old_world: "Secrets stored in app memory"
+  with_realxreal: "Protected: critical info lives in Secure Enclave"
+  severity: "high"
+
+- attack_type: "3rd Party Data Breach"
+  old_world: "Stolen credentials reused everywhere"
+  with_realxreal: "Meaningless: data is device-bound and encrypted"
+  severity: "critical"
+
+- attack_type: "Man-in-the-Middle"
+  old_world: "Attackers intercept or spoof media"
+  with_realxreal: "Blocked: each response is device-verified & signed"
+  severity: "critical"
