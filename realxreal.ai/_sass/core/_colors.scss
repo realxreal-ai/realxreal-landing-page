@@ -1,0 +1,47 @@
+/* ============================================
+   COLORS - Single source of truth for all colors
+   ============================================ */
+
+:root {
+    /* Brand Colors - Blues */
+    --blue-light: #94efff;
+    --blue-primary: #4370ff;
+    --blue-dark: #080f36;
+    
+    /* Brand Colors - Purples */
+    --purple-light: #b0c3ff;
+    --purple-primary: #404aff;
+    --purple-dark: #0f0435;
+    
+    /* Semantic Colors (Easier to use) */
+    --primary: #404aff;           /* Purple - primary brand color */
+    --secondary: #94efff;         /* Light blue - highlights */
+    --accent: #4370ff;            /* Blue - CTAs */
+    
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-light-gray: #f8faff;
+    --bg-dark: #0f0435;           /* Deep purple */
+    --bg-accent: #404aff;         /* Purple accent */
+    
+    /* Text Colors */
+    --text-dark: #080f36;         /* Dark blue on light backgrounds */
+    --text-light: #ffffff;        /* White on dark backgrounds */
+    --text-muted-light: #6b7280;  /* Gray text on light backgrounds */
+    --text-muted-dark: #b0c3ff;   /* Light purple on dark backgrounds */
+    
+    /* Border Colors */
+    --border-light: rgba(8, 15, 54, 0.1);
+    --border-dark: rgba(176, 195, 255, 0.2);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-purple: 0 8px 25px rgba(64, 74, 255, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.15s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+}

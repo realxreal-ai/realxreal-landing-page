@@ -1,0 +1,54 @@
+/* ============================================
+   ANIMATIONS - Keyframes and effects
+   ============================================ */
+
+/* Animated background grid */
+.bg-grid {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    z-index: -1; 
+    opacity: 0.03;
+    background-image:
+        linear-gradient(rgba(176, 195, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 195, 255, 0.2) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    display: none;
+}
+
+/* Show grid only on purple sections */
+.section[data-theme="purple"] ~ .bg-grid {
+    display: block;
+}
+
+@keyframes gridMove {
+    from { transform: translate(0, 0); }
+    to { transform: translate(50px, 50px); }
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Scroll animation for carousel */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
