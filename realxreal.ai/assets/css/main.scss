@@ -2,10 +2,23 @@
 # Front matter required for Jekyll to process
 ---
 
-// Import partials
+// Core
 @import 'variables';
 @import 'typography';
+
+// Layout
 @import 'navigation';
-@import 'components';
+@import 'footer';
+
+// Components
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/stats';
+@import 'components/tables';
+@import 'components/forms';
+
+// Sections
 @import 'sections';
+
+// Utilities
 @import 'utilities';

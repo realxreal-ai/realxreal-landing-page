@@ -1,0 +1,38 @@
+/* Tables */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.attack-vector-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1rem;
+    
+    th, td {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    th {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-dark);
+    }
+    
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+    
+    td:nth-child(3) {
+        color: #404AFF;
+        font-weight: 600;
+    }
+}
