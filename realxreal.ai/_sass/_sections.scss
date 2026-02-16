@@ -22,7 +22,7 @@
     }
     
     .container {
-        max-width: 800px;
+        max-width: 900px;
     }
 }
 
@@ -31,6 +31,41 @@
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+}
+
+/* Solution Intro */
+.solution-intro {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    
+    h2 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .solution-tagline {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        opacity: 0.85;
+    }
+}
+
+/* Attack Vectors Table Section */
+#attack-vectors {
+    .section-header {
+        margin-bottom: 3rem;
+    }
+}
+
+.realxreal-column {
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+body[data-section-theme="dark"] .realxreal-column,
+body[data-section-theme="accent"] .realxreal-column {
+    color: var(--secondary) !important;
 }
 
 /* About Section */
@@ -185,6 +220,10 @@
 @media (max-width: 768px) {
     .section {
         padding: 6rem 1.5rem 3rem;
+    }
+    
+    .solution-intro {
+        margin-bottom: 3rem;
     }
     
     #about .container {

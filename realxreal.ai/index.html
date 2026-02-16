@@ -1,37 +1,211 @@
 ---
 layout: default
-title: Real-Time Identity Verification for Enterprise
-description: Stop wire fraud, executive impersonation, and help desk social engineering with cryptographic identity verification.
+title: Deepfakes Stop Here
+description: Verify identity before every high-stakes decision. Stop wire fraud, CEO impersonation, and help desk attacks with cryptographic proof.
 ---
 
+<!-- Hero Section -->
 <section id="hero" class="section" data-theme="dark">
   <div class="container animate-on-load">
-    <div class="hero-logo">
-      <img src="{{ '/assets/images/logos/realxreal-dark-logo.png' | relative_url }}" alt="realxreal.ai logo">
-    </div>
-    <h1 class="hero-title">realxreal</h1>
-    <h2 class="hero-subtitle">Real-Time Identity Verification for Enterprise</h2>
-    <p class="hero-description">
-      Stop wire fraud, executive impersonation, and help desk social engineering. 
-      Cryptographic proof that verifies identity in seconds—not gut instinct.
-    </p>
+    <h1 class="hero-title">Deepfakes stop here.</h1>
+    <h2 class="hero-subtitle">
+      Verify identity before every high-stakes decision.<br>
+      Stop wire fraud, CEO impersonation, and help desk attacks<br>
+      with cryptographic proof—not AI guessing.
+    </h2>
+    
     <div class="hero-ctas">
-      <a href="#contact" class="cta-button primary">Request Demo</a>
-      <a href="{{ '/platform' | relative_url }}" class="cta-button secondary">View Platform</a>
+      <a href="/demo" class="cta-button primary">Request Demo</a>
+      <a href="/platform" class="cta-button secondary">How It Works →</a>
     </div>
-    <p class="hero-note">
-      Also available: <a href="{{ site.product.app_url }}">Personal use edition</a> for families
+    
+    <p class="hero-trust">
+      Trusted by: 
+      <span class="trust-badge">NYPD</span>
+      <span class="trust-badge">10,000+ users</span>
     </p>
   </div>
 </section>
 
+<!-- Problem Statement with Rotating Text -->
 <section id="problem" class="section" data-theme="light">
   <div class="container fade-in">
     <div class="section-header">
-      <h2>AI-Powered Impersonation is Costing Enterprises Millions</h2>
+      <h2>Every impersonation attack starts with a lie.</h2>
     </div>
-    <!-- We'll populate this with data later -->
+    
+    <div class="rotating-text-container">
+      <p class="rotating-text-line">
+        <span id="rotatingText">That video call looks like your CFO.</span>
+      </p>
+      <p class="rotating-text-question">How do you know who's real?</p>
+    </div>
+    
+    <!-- Statistics -->
+    <div class="stats-grid">
+      {% for stat in site.data.statistics.hero_stats %}
+        <div class="stat-card fade-in">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+          <div class="stat-source">{{ stat.source }}</div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
-<!-- More sections will be added -->
+<!-- Industries Targeted -->
+<section id="industries" class="section" data-theme="accent">
+  <div class="container fade-in">
+    <div class="section-header">
+      <h2>Every industry has a target on its back.</h2>
+      <p class="section-subtitle">We help you verify before you trust.</p>
+    </div>
+    
+    <div class="industry-tags">
+      {% for industry in site.data.industries %}
+        <span class="industry-tag" data-risk="{{ industry.risk_level }}">
+          {{ industry.name }}
+        </span>
+      {% endfor %}
+    </div>
+    
+    <!-- Real-world Attacks -->
+    <div class="attack-stories-grid">
+      {% for story in site.data.enterprise_stories.featured %}
+        <div class="attack-story-card fade-in">
+          <span class="story-tag">{{ story.tag }}</span>
+          <h3 class="story-title">{{ story.title }}</h3>
+          <p class="story-description">{{ story.description }}</p>
+          <div class="story-meta">
+            <span class="story-loss">{{ story.loss_amount }}</span>
+            <span class="story-location">{{ story.location }}</span>
+          </div>
+          <a href="{{ story.url }}" target="_blank" class="story-link">
+            Read More →
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- The Solution -->
+<section id="solution" class="section" data-theme="dark">
+  <div class="container fade-in">
+    <div class="solution-intro">
+      <h2>realxreal introduces the first cryptographic identity verification protocol that uses shared memory instead of AI detection.</h2>
+      <p class="solution-tagline">
+        Stop impersonation at the source—before the call, before the wire transfer, before the damage.
+      </p>
+    </div>
+    
+    <!-- Solution Cards (2x2 Grid) -->
+    <div class="solutions-grid">
+      {% for solution in site.data.solutions %}
+        <div class="solution-card fade-in">
+          <div class="solution-icon">
+            <!-- Icon SVG based on {{ solution.icon }} -->
+            <svg width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none">
+              <!-- We'll add icons via CSS or inline SVG -->
+            </svg>
+          </div>
+          <h3>{{ solution.title }}</h3>
+          <p class="solution-tagline">{{ solution.tagline }}</p>
+          <p class="solution-description">{{ solution.short_description }}</p>
+          
+          <div class="solution-metrics">
+            {% for metric in solution.metrics %}
+              <div class="metric-item">
+                <span class="metric-label">{{ metric.label }}:</span>
+                <span class="metric-value">{{ metric.value }}</span>
+              </div>
+            {% endfor %}
+          </div>
+          
+          <a href="/solutions/{{ solution.id }}" class="solution-link">Learn More →</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Attack Vector Table -->
+<section id="attack-vectors" class="section" data-theme="light">
+  <div class="container fade-in">
+    <div class="section-header">
+      <h2>Eliminating Entire Attack Classes</h2>
+    </div>
+    
+    <div class="table-container">
+      <table class="attack-vector-table">
+        <thead>
+          <tr>
+            <th>Attack Vector</th>
+            <th>Traditional Security</th>
+            <th>With realxreal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for vector in site.data.attack_vectors %}
+            <tr>
+              <td><strong>{{ vector.attack_type }}</strong></td>
+              <td>{{ vector.old_world }}</td>
+              <td class="realxreal-column">{{ vector.with_realxreal }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="table-cta">
+      <a href="/resources/whitepaper" class="cta-button primary">
+        Download Security Whitepaper →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Platform Preview / Coming Soon -->
+<section id="platform-preview" class="section" data-theme="accent">
+  <div class="container fade-in">
+    <h2>Real-time identity verification</h2>
+    <p class="section-subtitle">Stop impersonation before it starts.</p>
+    
+    <div class="platform-content">
+      <div class="platform-image">
+        <!-- Placeholder for platform screenshot/diagram -->
+        <div class="coming-soon-badge">Platform Launching Q2 2026</div>
+      </div>
+      
+      <div class="platform-text">
+        <p>
+          Attackers can clone voices and faces, but they can't clone your shared memories. 
+          realxreal uses cryptographic challenge-response to verify identity in seconds—without 
+          storing biometrics or private data.
+        </p>
+        
+        <a href="/platform" class="cta-button secondary">Join Beta Waitlist →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section id="final-cta" class="section" data-theme="dark">
+  <div class="container fade-in">
+    <h2>Ready to stop impersonation attacks?</h2>
+    <p class="section-subtitle">
+      Schedule a 15-minute demo to see how realxreal verifies identity using cryptographic proof.
+    </p>
+    
+    <div class="hero-ctas">
+      <a href="/demo" class="cta-button primary">Request Demo</a>
+    </div>
+    
+    <p class="cta-alternative">
+      Or try the personal app for free: 
+      <a href="https://realxreal.app" target="_blank">Download for iPhone →</a>
+    </p>
+  </div>
+</section>

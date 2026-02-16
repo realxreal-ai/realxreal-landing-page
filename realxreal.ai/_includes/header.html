@@ -8,13 +8,45 @@
     </a>
     
     <ul class="nav-menu" id="navMenu">
-      {% for link in site.nav_links %}
-        <li>
-          <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+      {% for item in site.data.navigation.main %}
+        <li class="nav-item {% if item.dropdown %}has-dropdown{% endif %}">
+          {% if item.dropdown %}
+            <a href="{{ item.url }}" class="nav-link">
+              {{ item.title }}
+              <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6 9L1 4h10l-5 5z"/>
+              </svg>
+            </a>
+            <ul class="dropdown-menu">
+              {% for subitem in item.dropdown %}
+                <li>
+                  <a href="{{ subitem.url | relative_url }}" 
+                     {% if subitem.external %}target="_blank" rel="noopener"{% endif %}
+                     class="dropdown-link">
+                    <span class="dropdown-title">{{ subitem.title }}</span>
+                    {% if subitem.description %}
+                      <span class="dropdown-description">{{ subitem.description }}</span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <a href="{{ item.url | relative_url }}" 
+               {% if item.external %}target="_blank" rel="noopener"{% endif %}
+               class="nav-link {% if item.highlight %}nav-highlight{% endif %}">
+              {{ item.title }}
+            </a>
+          {% endif %}
         </li>
       {% endfor %}
-      <li>
-        <a href="{{ site.product.app_url }}" class="nav-cta">Download App →</a>
+      
+      <!-- CTA Button -->
+      <li class="nav-item nav-cta-item">
+        <a href="{{ site.data.navigation.cta.url | relative_url }}" 
+           class="nav-cta-button">
+          {{ site.data.navigation.cta.title }}
+        </a>
       </li>
     </ul>
     
