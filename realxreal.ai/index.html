@@ -4,8 +4,48 @@ title: Deepfakes Stop Here
 description: Verify identity before every high-stakes decision. Stop wire fraud, CEO impersonation, and help desk attacks with cryptographic proof—not AI guessing.
 ---
 
+<!-- Problem Statement with Rotating Text - NOW FIRST -->
+<section id="problem" class="section" data-theme="white">
+  <div class="container fade-in">
+    <div class="section-header">
+      <h2>Every impersonation attack starts with a lie.</h2>
+    </div>
+    
+    <div class="rotating-text-container">
+      <p class="rotating-text-line">
+        <span id="rotatingText">That video call looks like your CFO.</span>
+      </p>
+      <p class="rotating-text-question">How do you know who's real?</p>
+    </div>
+    
+    <!-- Video Examples -->
+    <div class="video-grid">
+      <div class="video-item">
+        <video autoplay loop muted playsinline>
+          <source src="https://videos.pexels.com/video-files/7255745/7255745-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay loop muted playsinline>
+          <source src="https://videos.pexels.com/video-files/946147/946147-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    <!-- Statistics -->
+    <div class="stats-grid">
+      {% for stat in site.data.statistics.hero_stats %}
+        <div class="stat-card fade-in">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+          <div class="stat-source">{{ stat.source }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <!-- Hero Section -->
-<!-- <section id="hero" class="section" data-theme="dark"> -->
 <section id="hero" class="section" data-theme="purple">
   <div class="container animate-on-load">
     <h1 class="hero-title">Deepfakes stop here.</h1>
@@ -29,36 +69,7 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
   </div>
 </section>
 
-<!-- Problem Statement with Rotating Text -->
-<!-- <section id="problem" class="section" data-theme="light"> -->
-<section id="problem" class="section" data-theme="white">
-  <div class="container fade-in">
-    <div class="section-header">
-      <h2>Every impersonation attack starts with a lie.</h2>
-    </div>
-    
-    <div class="rotating-text-container">
-      <p class="rotating-text-line">
-        <span id="rotatingText">That video call looks like your CFO.</span>
-      </p>
-      <p class="rotating-text-question">How do you know who's real?</p>
-    </div>
-    
-    <!-- Statistics -->
-    <div class="stats-grid">
-      {% for stat in site.data.statistics.hero_stats %}
-        <div class="stat-card fade-in">
-          <div class="stat-value">{{ stat.value }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
-          <div class="stat-source">{{ stat.source }}</div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <!-- Industries Targeted -->
-<!-- <section id="industries" class="section" data-theme="accent"> -->
 <section id="industries" class="section" data-theme="accent">
   <div class="container fade-in">
     <div class="section-header">
@@ -95,7 +106,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- The Solution -->
-<!-- <section id="solution" class="section" data-theme="dark"> -->
 <section id="solution" class="section" data-theme="white">
   <div class="container fade-in">
     <div class="solution-intro">
@@ -155,7 +165,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- How It Works -->
-<!-- <section id="how-it-works" class="section" data-theme="light"> -->
 <section id="how-it-works" class="section" data-theme="gray">
   <div class="container fade-in">
     <div class="section-header">
@@ -206,7 +215,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- Attack Vector Table -->
-<!-- <section id="attack-vectors" class="section" data-theme="accent"> -->
 <section id="attack-vectors" class="section" data-theme="accent">
   <div class="container fade-in">
     <div class="section-header">
@@ -243,7 +251,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- Platform Preview -->
-<!-- <section id="platform-preview" class="section" data-theme="dark"> -->
 <section id="platform-preview" class="section" data-theme="white">
   <div class="container fade-in">
     <h2>Verify every conversation. Everywhere.</h2>
@@ -285,7 +292,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- Privacy & Security -->
-<!-- <section id="privacy" class="section" data-theme="light"> -->
 <section id="privacy" class="section" data-theme="gray">
   <div class="container fade-in">
     <div class="section-header">
@@ -322,7 +328,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- Social Proof / Testimonial -->
-<!-- <section id="testimonial" class="section" data-theme="dark"> -->
 <section id="testimonial" class="section" data-theme="purple">
   <div class="container fade-in">
     <div class="testimonial-content">
@@ -355,7 +360,6 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
 </section>
 
 <!-- Final CTA -->
-<!-- <section id="contact" class="section" data-theme="accent"> -->
 <section id="contact" class="section" data-theme="accent">
   <div class="container fade-in">
     <h2>Ready to stop impersonation attacks?</h2>

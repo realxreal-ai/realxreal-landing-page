@@ -91,6 +91,24 @@ body[data-section-theme="accent"] .stat-value {
 }
 
 /* Rotating Text */
+// .rotating-text-container {
+//     text-align: center;
+//     margin: 3rem auto;
+//     max-width: 800px;
+// }
+
+// .rotating-text-line {
+//     font-size: clamp(1.5rem, 4vw, 2.5rem);
+//     font-weight: 700;
+//     color: var(--primary);
+//     min-height: 3em;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin-bottom: 1rem;
+// }
+
+/* Rotating Text */
 .rotating-text-container {
     text-align: center;
     margin: 3rem auto;
@@ -100,12 +118,51 @@ body[data-section-theme="accent"] .stat-value {
 .rotating-text-line {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 700;
-    color: var(--primary);
     min-height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+}
+
+/* White/Gray sections */
+.section[data-theme="white"] .rotating-text-line,
+.section[data-theme="gray"] .rotating-text-line {
+    color: var(--primary);
+}
+
+/* Purple/Accent sections */
+.section[data-theme="purple"] .rotating-text-line,
+.section[data-theme="accent"] .rotating-text-line {
+    color: var(--secondary);
+}
+
+#rotatingText {
+    display: inline-block;
+    position: relative;
+}
+
+#rotatingText::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 1.2em;
+    background: currentColor;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.rotating-text-question {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    opacity: 0.8;
 }
 
 body[data-section-theme="dark"] .rotating-text-line {

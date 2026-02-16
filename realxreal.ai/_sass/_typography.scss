@@ -123,3 +123,128 @@ h2.hero-subtitle {
     color: #404AFF;
     font-weight: 500;
 }
+
+/* Typography Styles */
+
+.special-font {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Section Headers */
+.section-header { 
+    text-align: center; 
+    margin-bottom: 4rem; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h2 { 
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700; 
+    line-height: 1.1; 
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+/* Text colors based on section theme */
+.section[data-theme="white"] h1,
+.section[data-theme="white"] h2,
+.section[data-theme="white"] h3,
+.section[data-theme="white"] h4,
+.section[data-theme="gray"] h1,
+.section[data-theme="gray"] h2,
+.section[data-theme="gray"] h3,
+.section[data-theme="gray"] h4 {
+    color: var(--text-dark);
+}
+
+.section[data-theme="white"] p,
+.section[data-theme="gray"] p {
+    color: var(--text-dark);
+}
+
+.section[data-theme="purple"] h1,
+.section[data-theme="purple"] h2,
+.section[data-theme="purple"] h3,
+.section[data-theme="purple"] h4,
+.section[data-theme="accent"] h1,
+.section[data-theme="accent"] h2,
+.section[data-theme="accent"] h3,
+.section[data-theme="accent"] h4 {
+    color: var(--text-light);
+}
+
+.section[data-theme="purple"] p,
+.section[data-theme="accent"] p {
+    color: var(--text-light);
+}
+
+/* Hero Typography */
+h1.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin: 0 auto 1rem;
+    color: var(--text-light);
+}
+
+h2.hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--purple-light);
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--text-light);
+}
+
+/* Section Subtitles */
+.section-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    opacity: 0.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section[data-theme="white"] .section-subtitle,
+.section[data-theme="gray"] .section-subtitle {
+    color: var(--text-muted-light);
+}
+
+.section[data-theme="purple"] .section-subtitle,
+.section[data-theme="accent"] .section-subtitle {
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+/* Problem/Description Text */
+.problem-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    line-height: 1.8;
+    margin: 1.5rem auto;
+    opacity: 0.9;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
