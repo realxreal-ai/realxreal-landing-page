@@ -44,20 +44,20 @@ function initMobileMenu() {
 }
 
 // Theme Observer - Changes body theme based on section
-function initThemeObserver() {
-    const sections = document.querySelectorAll('.section[data-theme]');
+// function initThemeObserver() {
+//     const sections = document.querySelectorAll('.section[data-theme]');
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const theme = entry.target.getAttribute('data-theme');
-                document.body.setAttribute('data-section-theme', theme);
-            }
-        });
-    }, { threshold: 0.5 });
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 const theme = entry.target.getAttribute('data-theme');
+//                 document.body.setAttribute('data-section-theme', theme);
+//             }
+//         });
+//     }, { threshold: 0.5 });
     
-    sections.forEach(section => observer.observe(section));
-}
+//     sections.forEach(section => observer.observe(section));
+// }
 
 // Fade-in Animations
 function initAnimations() {

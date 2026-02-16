@@ -3,31 +3,48 @@
     --font-heading: 'JetBrains Mono', monospace;
     --font-body: 'JetBrains Mono', monospace;
     
-    /* Light theme */
-    --bg-light: #f8faff;
-    --text-light: #080F36;
-    --primary: #4370FF;
-    --secondary: #94eFFF;
+    /* Core Brand Colors */
+    --blue-light: #94efff;
+    --blue-primary: #4370ff;
+    --blue-dark: #080f36;
     
-    /* Dark theme */
-    --bg-dark: #0F0435;
-    --text-dark: #B0C3FF;
-    --primary-dark: #404AFF;
-    --secondary-dark: #B0C3FF;
+    --purple-light: #b0c3ff;
+    --purple-primary: #404aff;
+    --purple-dark: #0f0435;
     
-    /* Accent theme */
-    --bg-accent: #404AFF;
-    --text-accent: #FFFFFF;
+    /* Semantic Color Assignments */
+    --primary: #404aff;           /* Purple primary for accents */
+    --secondary: #94efff;         /* Light blue for highlights */
+    --accent: #4370ff;            /* Blue for CTAs */
+    
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-light-gray: #f8faff;
+    --bg-dark: #0f0435;           /* Deep purple for footer/dark sections */
+    --bg-accent: #404aff;         /* Purple accent sections */
+    
+    /* Text Colors */
+    --text-dark: #080f36;         /* Dark blue for light backgrounds */
+    --text-light: #ffffff;        /* White for dark backgrounds */
+    --text-muted-light: #6b7280;  /* Muted text on light bg */
+    --text-muted-dark: #b0c3ff;   /* Light purple text on dark bg */
+    
+    /* Border Colors */
+    --border-light: rgba(8, 15, 54, 0.1);
+    --border-dark: rgba(176, 195, 255, 0.2);
     
     /* Transitions */
-    --transition-speed: 0.8s;
+    --transition-speed: 0.3s;
 }
 
-/* Global resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.special-font {
+    font-family: 'Inter', sans-serif;
 }
 
 /* Hide scrollbar */
@@ -41,27 +58,12 @@ html {
 body {
     font-family: var(--font-body);
     overflow-x: hidden;
-    transition: background-color var(--transition-speed) ease, 
-                color var(--transition-speed) ease;
-}
-
-/* Theme transitions */
-body[data-section-theme="light"] {
-    background-color: var(--bg-light);
-    color: var(--text-light);
-}
-
-body[data-section-theme="dark"] {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-white);
     color: var(--text-dark);
+    transition: none; /* Remove auto theme transitions */
 }
 
-body[data-section-theme="accent"] {
-    background-color: var(--bg-accent);
-    color: var(--text-accent);
-}
-
-/* Animated background grid */
+/* Animated background grid - ONLY on dark sections */
 .bg-grid {
     position: fixed;
     top: 0; 
@@ -71,13 +73,105 @@ body[data-section-theme="accent"] {
     z-index: -1; 
     opacity: 0.03;
     background-image:
-        linear-gradient(rgba(67, 112, 255, 0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(67, 112, 255, 0.2) 1px, transparent 1px);
+        linear-gradient(rgba(176, 195, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 195, 255, 0.2) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: gridMove 20s linear infinite;
+    display: none; /* Hide by default */
+}
+
+/* Show grid only on dark/purple sections */
+.section[data-theme="dark"] ~ .bg-grid,
+.section[data-theme="purple"] ~ .bg-grid {
+    display: block;
 }
 
 @keyframes gridMove {
     from { transform: translate(0, 0); }
     to { transform: translate(50px, 50px); }
 }
+
+
+// /* CSS Variables */
+// :root {
+//     --font-heading: 'JetBrains Mono', monospace;
+//     --font-body: 'JetBrains Mono', monospace;
+    
+//     /* Light theme */
+//     --bg-light: #f8faff;
+//     --text-light: #080F36;
+//     --primary: #4370FF;
+//     --secondary: #94eFFF;
+    
+//     /* Dark theme */
+//     --bg-dark: #0F0435;
+//     --text-dark: #B0C3FF;
+//     --primary-dark: #404AFF;
+//     --secondary-dark: #B0C3FF;
+    
+//     /* Accent theme */
+//     --bg-accent: #404AFF;
+//     --text-accent: #FFFFFF;
+    
+//     /* Transitions */
+//     --transition-speed: 0.8s;
+// }
+
+// /* Global resets */
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+
+// /* Hide scrollbar */
+// ::-webkit-scrollbar { display: none; }
+// html { 
+//     -ms-overflow-style: none; 
+//     scrollbar-width: none; 
+//     scroll-behavior: smooth;
+// }
+
+// body {
+//     font-family: var(--font-body);
+//     overflow-x: hidden;
+//     transition: background-color var(--transition-speed) ease, 
+//                 color var(--transition-speed) ease;
+// }
+
+// /* Theme transitions */
+// body[data-section-theme="light"] {
+//     background-color: var(--bg-light);
+//     color: var(--text-light);
+// }
+
+// body[data-section-theme="dark"] {
+//     background-color: var(--bg-dark);
+//     color: var(--text-dark);
+// }
+
+// body[data-section-theme="accent"] {
+//     background-color: var(--bg-accent);
+//     color: var(--text-accent);
+// }
+
+// /* Animated background grid */
+// .bg-grid {
+//     position: fixed;
+//     top: 0; 
+//     left: 0; 
+//     width: 100%; 
+//     height: 100%;
+//     z-index: -1; 
+//     opacity: 0.03;
+//     background-image:
+//         linear-gradient(rgba(67, 112, 255, 0.2) 1px, transparent 1px),
+//         linear-gradient(90deg, rgba(67, 112, 255, 0.2) 1px, transparent 1px);
+//     background-size: 50px 50px;
+//     animation: gridMove 20s linear infinite;
+// }
+
+// @keyframes gridMove {
+//     from { transform: translate(0, 0); }
+//     to { transform: translate(50px, 50px); }
+// }

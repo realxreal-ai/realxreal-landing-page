@@ -1,16 +1,10 @@
-/* Footer Styles */
+/* Footer Styles - ALWAYS Dark Purple */
 
 footer {
     padding: 4rem 2rem 2rem;
-    border-top: 1px solid rgba(176, 195, 255, 0.1);
-    background: var(--bg-dark);
-    color: var(--text-dark);
-}
-
-body[data-section-theme="light"] footer {
-    border-top: 1px solid rgba(8, 15, 54, 0.1);
-    background: var(--bg-light);
-    color: var(--text-light);
+    border-top: 1px solid var(--border-dark);
+    background: var(--bg-dark) !important;
+    color: var(--text-light) !important;
 }
 
 .footer-container {
@@ -28,6 +22,7 @@ body[data-section-theme="light"] footer {
         margin-top: 0.75rem;
         line-height: 1.6;
         font-size: 0.95rem;
+        color: var(--text-muted-dark);
     }
 }
 
@@ -46,19 +41,21 @@ body[data-section-theme="light"] footer {
         opacity: 0.6;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        color: var(--text-muted-dark);
     }
     
     a {
         display: block;
-        color: inherit;
+        color: var(--text-light);
         text-decoration: none;
         opacity: 0.7;
         margin-bottom: 0.6rem;
         font-size: 0.95rem;
-        transition: opacity 0.3s ease;
+        transition: all 0.3s ease;
         
         &:hover {
             opacity: 1;
+            color: var(--secondary);
         }
     }
 }
@@ -77,51 +74,41 @@ body[data-section-theme="light"] footer {
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    background: rgba(67, 112, 255, 0.1);
+    background: rgba(176, 195, 255, 0.1);
     transition: all 0.3s ease;
     opacity: 0.7 !important;
     
     &:hover {
         opacity: 1 !important;
-        background: rgba(67, 112, 255, 0.2);
+        background: rgba(176, 195, 255, 0.2);
         transform: translateY(-2px);
     }
     
     svg {
         width: 20px;
         height: 20px;
-    }
-}
-
-body[data-section-theme="light"] .social-link {
-    background: rgba(67, 112, 255, 0.1);
-    
-    &:hover {
-        background: rgba(67, 112, 255, 0.15);
+        color: var(--secondary);
     }
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(176, 195, 255, 0.1);
+    border-top: 1px solid var(--border-dark);
     opacity: 0.6;
     font-size: 0.85rem;
     
     a {
-        color: inherit;
+        color: var(--text-light);
         text-decoration: none;
         opacity: 0.8;
         
         &:hover {
             opacity: 1;
             text-decoration: underline;
+            color: var(--secondary);
         }
     }
-}
-
-body[data-section-theme="light"] .footer-bottom {
-    border-top: 1px solid rgba(8, 15, 54, 0.1);
 }
 
 /* Footer CTA Button */
@@ -131,9 +118,11 @@ body[data-section-theme="light"] .footer-bottom {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
     margin-top: 1rem;
+    background: var(--primary);
     
     &:hover {
         opacity: 1;
+        background: var(--purple-primary);
     }
 }
 
@@ -154,3 +143,160 @@ body[data-section-theme="light"] .footer-bottom {
         padding: 3rem 1.5rem 2rem;
     }
 }
+
+// /* Footer Styles */
+
+// footer {
+//     padding: 4rem 2rem 2rem;
+//     border-top: 1px solid rgba(176, 195, 255, 0.1);
+//     background: var(--bg-dark);
+//     color: var(--text-dark);
+// }
+
+// body[data-section-theme="light"] footer {
+//     border-top: 1px solid rgba(8, 15, 54, 0.1);
+//     background: var(--bg-light);
+//     color: var(--text-light);
+// }
+
+// .footer-container {
+//     max-width: 1400px;
+//     margin: 0 auto;
+//     display: grid;
+//     grid-template-columns: 2fr repeat(5, 1fr);
+//     gap: 3rem;
+//     margin-bottom: 2rem;
+// }
+
+// .footer-brand {
+//     p {
+//         opacity: 0.7;
+//         margin-top: 0.75rem;
+//         line-height: 1.6;
+//         font-size: 0.95rem;
+//     }
+// }
+
+// .footer-tagline {
+//     font-weight: 600;
+//     opacity: 0.85 !important;
+//     margin-top: 0.5rem !important;
+// }
+
+// .footer-links {
+//     h4 {
+//         font-family: var(--font-heading);
+//         font-size: 0.9rem;
+//         font-weight: 600;
+//         margin-bottom: 1rem;
+//         opacity: 0.6;
+//         text-transform: uppercase;
+//         letter-spacing: 0.5px;
+//     }
+    
+//     a {
+//         display: block;
+//         color: inherit;
+//         text-decoration: none;
+//         opacity: 0.7;
+//         margin-bottom: 0.6rem;
+//         font-size: 0.95rem;
+//         transition: opacity 0.3s ease;
+        
+//         &:hover {
+//             opacity: 1;
+//         }
+//     }
+// }
+
+// .social-links {
+//     display: flex;
+//     gap: 1rem;
+//     margin-top: 0.5rem;
+//     flex-wrap: wrap;
+// }
+
+// .social-link {
+//     width: 40px;
+//     height: 40px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 8px;
+//     background: rgba(67, 112, 255, 0.1);
+//     transition: all 0.3s ease;
+//     opacity: 0.7 !important;
+    
+//     &:hover {
+//         opacity: 1 !important;
+//         background: rgba(67, 112, 255, 0.2);
+//         transform: translateY(-2px);
+//     }
+    
+//     svg {
+//         width: 20px;
+//         height: 20px;
+//     }
+// }
+
+// body[data-section-theme="light"] .social-link {
+//     background: rgba(67, 112, 255, 0.1);
+    
+//     &:hover {
+//         background: rgba(67, 112, 255, 0.15);
+//     }
+// }
+
+// .footer-bottom {
+//     text-align: center;
+//     padding-top: 2rem;
+//     border-top: 1px solid rgba(176, 195, 255, 0.1);
+//     opacity: 0.6;
+//     font-size: 0.85rem;
+    
+//     a {
+//         color: inherit;
+//         text-decoration: none;
+//         opacity: 0.8;
+        
+//         &:hover {
+//             opacity: 1;
+//             text-decoration: underline;
+//         }
+//     }
+// }
+
+// body[data-section-theme="light"] .footer-bottom {
+//     border-top: 1px solid rgba(8, 15, 54, 0.1);
+// }
+
+// /* Footer CTA Button */
+// .footer-links .cta-button {
+//     width: 100%;
+//     text-align: center;
+//     padding: 0.8rem 1.5rem;
+//     font-size: 0.9rem;
+//     margin-top: 1rem;
+    
+//     &:hover {
+//         opacity: 1;
+//     }
+// }
+
+// /* Mobile Footer */
+// @media (max-width: 1024px) {
+//     .footer-container {
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .footer-container {
+//         grid-template-columns: 1fr;
+//         gap: 2rem;
+//     }
+    
+//     footer {
+//         padding: 3rem 1.5rem 2rem;
+//     }
+// }
