@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Deepfakes Stop Here
-description: Verify identity before every high-stakes decision. Stop wire fraud, CEO impersonation, and help desk attacks with cryptographic proof.
+description: Verify identity before every high-stakes decision. Stop wire fraud, CEO impersonation, and help desk attacks with cryptographic proof—not AI guessing.
 ---
 
 <!-- Hero Section -->
@@ -15,14 +15,15 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
     </h2>
     
     <div class="hero-ctas">
-      <a href="/demo" class="cta-button primary">Request Demo</a>
-      <a href="/platform" class="cta-button secondary">How It Works →</a>
+      <a href="#contact" class="cta-button primary">Request Demo</a>
+      <a href="#how-it-works" class="cta-button secondary">How It Works →</a>
     </div>
     
     <p class="hero-trust">
       Trusted by: 
       <span class="trust-badge">NYPD</span>
       <span class="trust-badge">10,000+ users</span>
+      <span class="trust-badge">Open Source</span>
     </p>
   </div>
 </section>
@@ -81,7 +82,7 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
             <span class="story-loss">{{ story.loss_amount }}</span>
             <span class="story-location">{{ story.location }}</span>
           </div>
-          <a href="{{ story.url }}" target="_blank" class="story-link">
+          <a href="{{ story.url }}" target="_blank" rel="noopener" class="story-link">
             Read More →
           </a>
         </div>
@@ -105,9 +106,28 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
       {% for solution in site.data.solutions %}
         <div class="solution-card fade-in">
           <div class="solution-icon">
-            <!-- Icon SVG based on {{ solution.icon }} -->
-            <svg width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none">
-              <!-- We'll add icons via CSS or inline SVG -->
+            <svg width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              {% if solution.icon == "shield-user" %}
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+              {% elsif solution.icon == "dollar-sign" %}
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
+                <path d="M12 3v3m0 12v3" />
+              {% elsif solution.icon == "headset" %}
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="4" y="13" width="5" height="7" rx="2" />
+                <rect x="15" y="13" width="5" height="7" rx="2" />
+                <path d="M4 15v-6a8 8 0 0 1 16 0v6" />
+              {% elsif solution.icon == "users" %}
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="9" cy="7" r="4" />
+                <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+              {% endif %}
             </svg>
           </div>
           <h3>{{ solution.title }}</h3>
@@ -115,9 +135,9 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
           <p class="solution-description">{{ solution.short_description }}</p>
           
           <div class="solution-metrics">
-            {% for metric in solution.metrics %}
+            {% for metric in solution.metrics limit:2 %}
               <div class="metric-item">
-                <span class="metric-label">{{ metric.label }}:</span>
+                <span class="metric-label">{{ metric.label }}</span>
                 <span class="metric-value">{{ metric.value }}</span>
               </div>
             {% endfor %}
@@ -130,8 +150,58 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
   </div>
 </section>
 
+<!-- How It Works -->
+<section id="how-it-works" class="section" data-theme="light">
+  <div class="container fade-in">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p class="section-subtitle">Cryptographic proof in three steps</p>
+    </div>
+    
+    <div class="how-it-works-content">
+      <div class="how-it-works-scenario">
+        <h3>Scenario: Your CFO receives a Slack message from "the CEO" requesting a $500K urgent wire transfer.</h3>
+      </div>
+      
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-number">1</div>
+          <h4>CFO clicks "Verify with realxreal"</h4>
+          <p>One-click Slack integration. No app switching required.</p>
+        </div>
+        
+        <div class="step-card fade-in">
+          <div class="step-number">2</div>
+          <h4>Push notification to real CEO</h4>
+          <p>"Did you request $500K wire? Approve or Deny"</p>
+        </div>
+        
+        <div class="step-card fade-in">
+          <div class="step-number">3</div>
+          <h4>CEO responds in 5 seconds</h4>
+          <p>❌ "No, that's not me" — Fraud prevented.</p>
+        </div>
+      </div>
+      
+      <div class="how-it-works-result">
+        <p><strong>Result:</strong> CFO sees alert, doesn't wire. Security team notified. $500K saved.</p>
+      </div>
+    </div>
+    
+    <div class="protocol-explanation fade-in">
+      <h3>Powered by The Doppelgänger Protocol™</h3>
+      <p>
+        Our cryptographic protocol combines memory-based authentication with device-bound keys 
+        and biometric verification. Even if someone clones your voice and face perfectly, they 
+        can't fake your memories or access your device's secure hardware.
+      </p>
+      <a href="/platform" class="cta-button secondary">View Technical Docs →</a>
+    </div>
+  </div>
+</section>
+
 <!-- Attack Vector Table -->
-<section id="attack-vectors" class="section" data-theme="light">
+<section id="attack-vectors" class="section" data-theme="accent">
   <div class="container fade-in">
     <div class="section-header">
       <h2>Eliminating Entire Attack Classes</h2>
@@ -166,33 +236,117 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
   </div>
 </section>
 
-<!-- Platform Preview / Coming Soon -->
-<section id="platform-preview" class="section" data-theme="accent">
+<!-- Platform Preview -->
+<section id="platform-preview" class="section" data-theme="dark">
   <div class="container fade-in">
-    <h2>Real-time identity verification</h2>
-    <p class="section-subtitle">Stop impersonation before it starts.</p>
+    <h2>Verify every conversation. Everywhere.</h2>
+    <p class="section-subtitle">
+      realxreal works inside the tools your team already uses—from Slack to Zoom to email. 
+      No app switching, no friction, no guessing.
+    </p>
     
     <div class="platform-content">
       <div class="platform-image">
-        <!-- Placeholder for platform screenshot/diagram -->
         <div class="coming-soon-badge">Platform Launching Q2 2026</div>
       </div>
       
       <div class="platform-text">
+        <h3>Real-time impersonation detection</h3>
         <p>
           Attackers can clone voices and faces, but they can't clone your shared memories. 
           realxreal uses cryptographic challenge-response to verify identity in seconds—without 
           storing biometrics or private data.
         </p>
         
-        <a href="/platform" class="cta-button secondary">Join Beta Waitlist →</a>
+        <div class="integration-logos">
+          <span class="integration-badge">Slack</span>
+          <span class="integration-badge">Teams</span>
+          <span class="integration-badge">Zoom</span>
+          <span class="integration-badge">Gmail</span>
+          <span class="integration-badge">Azure AD</span>
+          <span class="integration-badge">Okta</span>
+        </div>
+        
+        <div class="platform-ctas">
+          <p><strong>Current:</strong> iOS app for personal verification</p>
+          <a href="https://realxreal.app" class="cta-button secondary" target="_blank">Download App →</a>
+          <a href="/platform" class="cta-button secondary">View Roadmap →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy & Security -->
+<section id="privacy" class="section" data-theme="light">
+  <div class="container fade-in">
+    <div class="section-header">
+      <h2>Privacy-First, Zero Server-Side Storage</h2>
+      <p class="section-subtitle">Seamless security. Uncompromised privacy.</p>
+    </div>
+    
+    <div class="privacy-grid">
+      <div class="privacy-card fade-in">
+        <h4>No Biometric Storage</h4>
+        <p>We never store biometrics. Private keys live in device Secure Enclave only.</p>
+      </div>
+      
+      <div class="privacy-card fade-in">
+        <h4>Zero-Retention</h4>
+        <p>Verification challenges processed in real-time, never written to disk.</p>
+      </div>
+      
+      <div class="privacy-card fade-in">
+        <h4>Open Source</h4>
+        <p>Doppelgänger Protocol is publicly auditable. Security through transparency.</p>
+      </div>
+      
+      <div class="privacy-card fade-in">
+        <h4>Compliance Ready</h4>
+        <p>SOC 2 Type II (in progress), GDPR compliant, HIPAA-ready architecture.</p>
+      </div>
+    </div>
+    
+    <div class="privacy-cta">
+      <a href="/security" class="cta-button primary">Read Security Whitepaper →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof / Testimonial -->
+<section id="testimonial" class="section" data-theme="dark">
+  <div class="container fade-in">
+    <div class="testimonial-content">
+      <blockquote>
+        <p class="testimonial-quote">
+          "In our line of work, verifying identity isn't just good practice—it's essential. 
+          realxreal gives us cryptographic certainty without compromising privacy."
+        </p>
+        <footer class="testimonial-attribution">
+          — CISO, Regional Financial Institution
+        </footer>
+      </blockquote>
+    </div>
+    
+    <div class="social-proof-stats">
+      <div class="proof-stat">
+        <span class="proof-number">10,000+</span>
+        <span class="proof-label">Users Protected</span>
+      </div>
+      <div class="proof-stat">
+        <span class="proof-number">1.2K</span>
+        <span class="proof-label">GitHub Stars</span>
+      </div>
+      <div class="proof-stat">
+        <span class="proof-label">Featured in:</span>
+        <span class="proof-value">TechCrunch • WSJ • NYT</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Final CTA -->
-<section id="final-cta" class="section" data-theme="dark">
+<section id="contact" class="section" data-theme="accent">
   <div class="container fade-in">
     <h2>Ready to stop impersonation attacks?</h2>
     <p class="section-subtitle">
@@ -200,7 +354,7 @@ description: Verify identity before every high-stakes decision. Stop wire fraud,
     </p>
     
     <div class="hero-ctas">
-      <a href="/demo" class="cta-button primary">Request Demo</a>
+      <a href="mailto:info@realxreal.ai?subject=Demo Request" class="cta-button primary">Request Demo</a>
     </div>
     
     <p class="cta-alternative">
