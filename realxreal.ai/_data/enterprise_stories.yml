@@ -1,0 +1,48 @@
+# Enterprise-focused attack stories (NO carousel - grid layout)
+# Only show B2B stories on homepage
+
+featured:
+  - title: "$25M Stolen via Deepfake CFO"
+    tag: "CEO Fraud"
+    description: "Hong Kong bank employee transferred millions after criminals used deepfake video call to impersonate the company's CFO in real-time."
+    url: "https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html"
+    image: "https://images.pexels.com/photos/3205403/pexels-photo-3205403.jpeg"
+    loss_amount: "$25M"
+    location: "Hong Kong"
+    year: 2024
+    
+  - title: "Ferrari Blocks $1M CEO Scam"
+    tag: "Executive Protection"
+    description: "Ferrari executive suspected deepfake when 'CEO' called. Asked a personal question only the real CEO would know. Attack thwarted."
+    url: "https://sloanreview.mit.edu/article/how-ferrari-hit-the-brakes-on-a-deepfake-ceo/"
+    image: "https://images.pexels.com/photos/404190/pexels-photo-404190.jpeg"
+    loss_amount: "$1M"
+    location: "Italy"
+    year: 2024
+    
+  - title: "$243K Wire Transfer Nearly Stolen"
+    tag: "Help Desk Attack"
+    description: "German CEO almost lost significant sum to targeted voice phishing campaign using AI-generated executive voice."
+    url: "https://blog.avast.com/deepfake-voice-fraud-causes-243k-scam"
+    image: "https://images.pexels.com/photos/6694922/pexels-photo-6694922.jpeg"
+    loss_amount: "$243K"
+    location: "Germany"
+    year: 2024
+
+# Additional stories for blog/education
+additional:
+  - title: "U.S. Government Targeted"
+    tag: "Government"
+    description: "Secretary of State Marco Rubio deepfaked to trick government officials."
+    url: "https://fortune.com/2025/07/10/deepfake-marco-rubio-ai-voice-scams/"
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800"
+    audience: "government"
+    year: 2025
+    
+  - title: "82-Year-Old Loses $17K"
+    tag: "Elder Fraud"
+    description: "Senior citizen loses $17,000 trying to help fake son-in-law via social engineering phone call."
+    url: "https://abc13.com/post/ai-generated-voice-cloning-scams-against-elderly-82-year-old-loses-17000/14009790/"
+    image: "https://images.pexels.com/photos/10374363/pexels-photo-10374363.jpeg"
+    audience: "consumer"
+    year: 2024

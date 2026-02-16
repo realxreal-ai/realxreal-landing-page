@@ -1,0 +1,26 @@
+# Industries targeted by deepfakes/impersonation
+# Used in: Homepage "Every industry" section
+
+- name: "Banking"
+  risk_level: "critical"
+  
+- name: "Healthcare"
+  risk_level: "high"
+  
+- name: "Government"
+  risk_level: "critical"
+  
+- name: "Financial Services"
+  risk_level: "critical"
+  
+- name: "Technology"
+  risk_level: "high"
+  
+- name: "Manufacturing"
+  risk_level: "medium"
+  
+- name: "Insurance"
+  risk_level: "high"
+  
+- name: "Critical Infrastructure"
+  risk_level: "critical"

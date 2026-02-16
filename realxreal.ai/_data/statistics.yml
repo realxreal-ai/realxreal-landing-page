@@ -1,0 +1,13 @@
+# Homepage statistics section
+hero_stats:
+  - value: "93%"
+    label: "Increase in BEC attacks"
+    source: "FBI IC3 Report 2024"
+    
+  - value: "$1.2M"
+    label: "Average wire fraud loss"
+    source: "Per incident"
+    
+  - value: "77%"
+    label: "Of voice clone victims lost money"
+    source: "McAfee 2024"

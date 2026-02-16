@@ -1,0 +1,51 @@
+# Main navigation structure
+main:
+  - title: "Solutions"
+    url: "#"
+    dropdown:
+      - title: "Executive Protection"
+        url: "/solutions/executive-protection"
+        description: "Verify C-suite communications"
+      - title: "Wire Transfer Verification"
+        url: "/solutions/wire-transfer"
+        description: "Multi-party payment approval"
+      - title: "Help Desk Security"
+        url: "/solutions/help-desk"
+        description: "Stop password reset attacks"
+      - title: "Vendor Fraud Prevention"
+        url: "/solutions/vendor-fraud"
+        description: "Verify bank account changes"
+      - title: "Personal Use"
+        url: "https://realxreal.app"
+        description: "Protect your family"
+        external: true
+  
+  - title: "Platform"
+    url: "/platform"
+  
+  - title: "Resources"
+    url: "#"
+    dropdown:
+      - title: "Blog"
+        url: "/blog"
+      - title: "Security Whitepaper"
+        url: "/resources/whitepaper"
+      - title: "Developer Docs"
+        url: "https://github.com/realxreal-ai"
+        external: true
+      - title: "FAQ"
+        url: "/faq"
+  
+  - title: "About"
+    url: "/about"
+  
+  - title: "Download App"
+    url: "https://realxreal.app"
+    external: true
+    highlight: false
+
+# CTA button (separate from main nav)
+cta:
+  title: "Request Demo"
+  url: "/demo"
+  style: "primary"
