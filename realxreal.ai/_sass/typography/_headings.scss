@@ -1,0 +1,80 @@
+/* ============================================
+   HEADINGS - All heading styles
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+}
+
+h2 { 
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+/* Section-specific heading colors */
+.section[data-theme="white"] h1,
+.section[data-theme="white"] h2,
+.section[data-theme="white"] h3,
+.section[data-theme="white"] h4,
+.section[data-theme="gray"] h1,
+.section[data-theme="gray"] h2,
+.section[data-theme="gray"] h3,
+.section[data-theme="gray"] h4 {
+    color: var(--text-dark);
+}
+
+.section[data-theme="purple"] h1,
+.section[data-theme="purple"] h2,
+.section[data-theme="purple"] h3,
+.section[data-theme="purple"] h4,
+.section[data-theme="accent"] h1,
+.section[data-theme="accent"] h2,
+.section[data-theme="accent"] h3,
+.section[data-theme="accent"] h4 {
+    color: var(--text-light);
+}
+
+/* Hero Headings */
+h1.hero-title {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: var(--font-extrabold);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin: 0 auto 1rem;
+    color: var(--text-light);
+}
+
+h2.hero-subtitle {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-tight);
+    color: var(--purple-light);
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Section Headers */
+.section-header { 
+    text-align: center; 
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+}

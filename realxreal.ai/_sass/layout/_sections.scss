@@ -1,0 +1,56 @@
+/* ============================================
+   SECTIONS - Main section layouts
+   ============================================ */
+
+/* Base Section */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+}
+
+/* Section Themes */
+.section[data-theme="white"],
+.section[data-theme="light"] {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.section[data-theme="gray"] {
+    background-color: var(--bg-light-gray);
+    color: var(--text-dark);
+}
+
+.section[data-theme="purple"],
+.section[data-theme="dark"] {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.section[data-theme="accent"] {
+    background-color: var(--bg-accent);
+    color: var(--text-light);
+}
+
+/* Containers */
+.container {
+    max-width: var(--container-max);
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Mobile Sections */
+@media (max-width: 768px) {
+    .section {
+        padding: 6rem 1.5rem 3rem;
+    }
+}
