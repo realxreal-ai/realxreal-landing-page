@@ -1,24 +1,36 @@
 ---
-# Front matter required for Jekyll to process
 ---
 
 // Core
-@import 'variables';
-@import 'typography';
+@import 'core/reset';
+@import 'core/colors';
+@import 'core/typography-base';
+@import 'core/spacing';
 
 // Layout
-@import 'navigation';
-@import 'footer';
+@import 'layout/grid';
+@import 'layout/sections';
+@import 'layout/navigation';
+@import 'layout/footer';
+
+// Typography
+@import 'typography/headings';
+@import 'typography/body-text';
+@import 'typography/special-text';
 
 // Components
 @import 'components/buttons';
 @import 'components/cards';
 @import 'components/stats';
+@import 'components/badges';
 @import 'components/tables';
 @import 'components/forms';
 
-// Sections
-@import 'sections';
+// Themes
+@import 'themes/theme-white';
+@import 'themes/theme-gray';
+@import 'themes/theme-purple';
+@import 'themes/theme-accent';
 
 // Utilities
 @import 'utilities';
