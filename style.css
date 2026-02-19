@@ -29,7 +29,7 @@
 /* Hide scrollbar */
 ::-webkit-scrollbar { display: none; }
 html { -ms-overflow-style: none; scrollbar-width: none; }
-
+/*commnet */ 
 body {
     font-family: var(--font-body);
     overflow-x: hidden;
