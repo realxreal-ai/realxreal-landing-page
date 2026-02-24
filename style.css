@@ -970,3 +970,96 @@ div[data-youform-embed] iframe {
         gap: 3rem;
     }
 }
+
+/* --- Sponsors Section --- */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+    gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.sponsor-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-section-theme="light"] .sponsor-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sponsor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(67, 112, 255, 0.2);
+    border-color: rgba(67, 112, 255, 0.3);
+}
+
+.sponsor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--secondary);
+    background: rgba(148, 239, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+body[data-section-theme="light"] .sponsor-badge {
+    color: var(--primary);
+    background: rgba(67, 112, 255, 0.1);
+}
+
+.sponsor-logo-wrapper {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.sponsor-logo {
+    max-height: 100%;
+    max-width: 150px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+/* Automatically inverts a black logo to white for dark themes */
+body[data-section-theme="dark"] .sponsor-logo,
+body[data-section-theme="accent"] .sponsor-logo {
+    filter: brightness(0) invert(1);
+}
+
+.sponsor-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.sponsor-description {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
