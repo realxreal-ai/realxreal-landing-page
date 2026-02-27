@@ -53,38 +53,40 @@
 
         
 
-        <section id="problem" class="section" data-theme="light">
-            <div class="container fade-in">
-                <div class="problem-content">
-                    <h2>Deepfakes are everywhere.</h2>
-                    <p class="section-subtitle">Voice clones. Video fakes. Impersonation scams.</p>
-                    <p class="problem-description">
-                        Every day, families lose millions to scammers using AI to clone voices and faces. 
-                        Companies wire money to fake executives. Parents panic over kidnapping hoaxes.
-                    </p>
-                    <!-- Replace the entire .video-frame div with this -->
-                    <div class="video-frame">
-                        <div class="instagram-container">
-                            <blockquote 
-                                class="instagram-media" 
-                                data-instgrm-captioned 
-                                data-instgrm-permalink="https://www.instagram.com/reel/DMbNpBlxMSW/?utm_source=ig_embed&utm_campaign=loading" 
-                                data-instgrm-version="14" 
-                                style="background:#FFF; border:0; border-radius:12px; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;">
-                            </blockquote>
-                        </div>
-                    </div>
-                    <p class="problem-description" style="margin-top: 2rem; font-style: italic; opacity: 0.8;">
-                        Sam Altman, CEO of OpenAI, on the deepfake crisis.
-                    </p>
-                    
+       <section id="problem" class="section" data-theme="light">
+    <div class="container fade-in">
+        <div class="problem-content">
+            <h2>Deepfakes are everywhere.</h2>
+            <p class="section-subtitle">Voice clones. Video fakes. Impersonation scams.</p>
+            <p class="problem-description">
+                Every day, families lose millions to scammers using AI to clone voices and faces. 
+                Companies wire money to fake executives. Parents panic over kidnapping hoaxes.
+            </p>
 
-                    <p class="problem-description">
-                        <strong>How do you know who's real anymore?</strong>
-                    </p>
+            <div class="video-frame">
+                <div class="video-container">
+                    <iframe
+                         
+                        src="https://www.youtube.com/embed/qekxoQaGEVA?si=i9_m31FT4y8il8BM&start=963&autoplay=1&mute=1&rel=0&modestbranding=1&cc_load_policy=1&cc_lang_pref=en&enablejsapi=1" 
+                        title="Sam Altman on the deepfake crisis"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
-        </section>
+
+            <p class="problem-description" style="margin-top: 2rem; font-style: italic; opacity: 0.8;">
+                Sam Altman, CEO of OpenAI, on the deepfake crisis.
+            </p>
+
+            <p class="problem-description">
+                <strong>How do you know who's real anymore?</strong>
+            </p>
+        </div>
+    </div>
+</section>
         
         <section id="about" class="section" data-theme="accent">
             <div class="container fade-in">
@@ -472,7 +474,27 @@
     </footer>
     
     <!-- Add this script once at the bottom of your <body> tag, before any other scripts -->
-    <script async src="//www.instagram.com/embed.js"></script>
+    <script>
+        const iframe = document.querySelector('.video-container iframe');
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        // Pause by reloading the src without autoplay
+                        iframe.contentWindow.postMessage(
+                            '{"event":"command","func":"pauseVideo","args":""}',
+                            '*'
+                        );
+                    }
+                });
+            },
+            { threshold: 0.3 } // pauses when 70% of video is out of view
+        );
+
+        observer.observe(iframe);
+    </script>
+    <!-- <script async src="//www.instagram.com/embed.js"></script> -->
     <script src="index.js"></script>
     
 </body>
