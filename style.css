@@ -1085,7 +1085,7 @@ body[data-section-theme="accent"] .sponsor-logo {
     display: flex;
     justify-content: center;
     border-radius: 12px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Mobile adjustments */
