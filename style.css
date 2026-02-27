@@ -1114,3 +1114,9 @@ body[data-section-theme="accent"] .sponsor-logo {
         border-radius: 8px;
     }
 }
+
+@media (max-width: 768px) {
+    .video-frame {
+        display: none;
+    }
+}
