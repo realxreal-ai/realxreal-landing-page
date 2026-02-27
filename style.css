@@ -1063,3 +1063,39 @@ body[data-section-theme="accent"] .sponsor-logo {
     line-height: 1.6;
     opacity: 0.8;
 }
+
+/* Add this to your style.css, perhaps under /* --- Screenshots Section --- */ or a new section */
+.video-frame {
+    background: linear-gradient(135deg, rgba(67, 112, 255, 0.1), rgba(148, 239, 255, 0.1));
+    border-radius: 24px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border: 1px solid rgba(67, 112, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    max-width: 580px; /* Tighter than YouTube since IG is portrait-ish */
+}
+
+.video-frame:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(67, 112, 255, 0.2);
+}
+
+.instagram-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .video-frame {
+        padding: 1rem;
+        margin: 1.5rem auto;
+    }
+
+    .instagram-container {
+        border-radius: 8px;
+    }
+}
